@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 
+# One-shot owner-approved influence and project update.
 
 def replace_once(text: str, old: str, new: str, label: str) -> str:
     count = text.count(old)
