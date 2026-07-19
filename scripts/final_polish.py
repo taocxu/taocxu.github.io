@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 
+# Final publication polish is intentionally idempotent for repeat audit runs.
 
 def replace_if_present(text: str, old: str, new: str, label: str) -> str:
     if old in text:
@@ -45,24 +46,9 @@ html = replace_if_present(
     'International Business Management (<a href="https://www.ucla.edu">UCLA</a>',
     'International Business Management punctuation',
 )
-html = replace_if_present(
-    html,
-    'Law Society of England & Wales',
-    'Law Society of England &amp; Wales',
-    'Law Society ampersand',
-)
-html = replace_if_present(
-    html,
-    'WHU Outstanding Student & Distinguished Paper Award',
-    'WHU Outstanding Student &amp; Distinguished Paper Award',
-    'WHU award ampersand',
-)
-html = replace_if_present(
-    html,
-    '<div class="profile-links" aria-label="Academic profiles">',
-    '<nav class="profile-links" aria-label="Academic profiles">',
-    'academic profiles navigation opening',
-)
+html = replace_if_present(html, 'Law Society of England & Wales', 'Law Society of England &amp; Wales', 'Law Society ampersand')
+html = replace_if_present(html, 'WHU Outstanding Student & Distinguished Paper Award', 'WHU Outstanding Student &amp; Distinguished Paper Award', 'WHU award ampersand')
+html = replace_if_present(html, '<div class="profile-links" aria-label="Academic profiles">', '<nav class="profile-links" aria-label="Academic profiles">', 'academic profiles navigation opening')
 html = replace_if_present(
     html,
     '''          <a href="https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434" target="_blank" rel="noopener">SSRN</a>
@@ -72,18 +58,8 @@ html = replace_if_present(
     'academic profiles navigation closing',
 )
 html = html.replace('<div class="key-modules" aria-label="Key modules">', '<div class="key-modules">')
-html = replace_if_present(
-    html,
-    '<div class="photo-gallery" aria-label="Selected personal photographs">',
-    '<div class="photo-gallery" role="group" aria-label="Selected personal photographs">',
-    'photo gallery group role',
-)
-html = replace_if_present(
-    html,
-    '<span>Development Draft&nbsp;&nbsp;·&nbsp;&nbsp;July 2026</span>',
-    '<span>Last updated&nbsp;&nbsp;·&nbsp;&nbsp;July 2026</span>',
-    'published footer status',
-)
+html = replace_if_present(html, '<div class="photo-gallery" aria-label="Selected personal photographs">', '<div class="photo-gallery" role="group" aria-label="Selected personal photographs">', 'photo gallery group role')
+html = replace_if_present(html, '<span>Development Draft&nbsp;&nbsp;·&nbsp;&nbsp;July 2026</span>', '<span>Last updated&nbsp;&nbsp;·&nbsp;&nbsp;July 2026</span>', 'published footer status')
 html = '\n'.join(line.rstrip() for line in html.splitlines()) + '\n'
 
 css = replace_if_present(
@@ -142,10 +118,7 @@ inventory = inventory.replace(
     1,
 )
 inventory = inventory.replace('| [CV] |', '| CV |').replace('| [LinkedIn] |', '| LinkedIn |').replace('| [ORCID] |', '| ORCID |').replace('| [GoogleScholar] |', '| GoogleScholar |').replace('| [SSRN] |', '| SSRN |').replace('| [ResearchGate] |', '| ResearchGate |')
-inventory = inventory.replace(
-    '| ‘When Polanyi Met Schumpeter: Social Trust and Entrepreneurship’ | https://mpra.ub.uni-muenchen.de/123894/ |',
-    '| ‘When Polanyi Met Schumpeter: Social Trust and Entrepreneurship’ | https://doi.org/10.31235/osf.io/nka6s_v3 |',
-)
+inventory = inventory.replace('| ‘When Polanyi Met Schumpeter: Social Trust and Entrepreneurship’ | https://mpra.ub.uni-muenchen.de/123894/ |', '| ‘When Polanyi Met Schumpeter: Social Trust and Entrepreneurship’ | https://doi.org/10.31235/osf.io/nka6s_v3 |')
 
 old_audit_end = '''        (
             normalise_text("The Road Not Taken? Industrial Policy and Political Settlements in China and Indonesia 1990–2022"),
