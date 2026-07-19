@@ -37,3 +37,12 @@ The current website can be restored by resetting the deployment branch to the pr
 - Contact
 
 No standalone teaching or media section is included at this stage.
+
+## Latest owner-approved refinements
+
+- Degree details use explicit HTML line breaks for programme, dissertation and supervisor information.
+- Site title and section headings use the Palatino font stack; body copy uses Aptos, Segoe UI, Helvetica Neue and Arial fallbacks.
+- The modelling certificate uses the portable relative path `CertificateMMCM.pdf`.
+- The hero email button was removed. The obfuscated address appears beside the research identity line and again in Contact, with both instances linked to the owner-specified email action.
+- The CV button now points to the owner-specified Google Drive file.
+- Google Scholar uses the English-language profile URL.
