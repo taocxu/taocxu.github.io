@@ -1,0 +1,34 @@
+name: Clean release branches
+
+on:
+  push:
+    branches:
+      - gh-pages
+    paths:
+      - .github/workflows/release-branch-cleanup.yml
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out published branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Remove superseded working branches
+        run: |
+          git push origin --delete feature/google-sites-v2 || true
+          git push origin --delete audit/final-v2-2026-07-20 || true
+
+      - name: Remove this one-shot workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/release-branch-cleanup.yml
+          git commit -m "Retain only published and rollback branches"
+          git push origin HEAD:gh-pages
