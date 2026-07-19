@@ -1,0 +1,29 @@
+name: Legacy hyperlink audit
+
+on:
+  pull_request:
+    branches:
+      - gh-pages
+  push:
+    branches:
+      - feature/google-sites-v2
+
+permissions:
+  contents: read
+
+jobs:
+  audit-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Audit legacy links and local targets
+        run: python scripts/audit_links.py
