@@ -78,23 +78,29 @@ This file records the link text-to-destination relationships governing the redes
 | Deloitte (Industrial Park, Suzhou) | Deloitte.pdf |
 | Mazars (Industrial Park, Suzhou) | Mazars.pdf |
 | CITIC (Kunshan, Suzhou) | CITIC.pdf |
-| Dr Li Liu | https://fddi.fudan.edu.cn/fddien/af/b1/c19479a307121/page.htm |
-| Dr Yi Zhu | https://cpi.sufe.edu.cn/45/1b/c13242a214299/page.htm |
-| Prof Yabei Hu | https://gmxy.nufe.edu.cn/info/1013/4509.htm |
+| Dr Liu | https://fddi.fudan.edu.cn/fddien/af/b1/c19479a307121/page.htm |
+| Prof Zhu | https://cpi.sufe.edu.cn/45/1b/c13242a214299/page.htm |
+| Prof Hu | https://gmxy.nufe.edu.cn/info/1013/4509.htm |
 | National Excellent Team Award, Provincial Special Team Award, NUFE Best Report Award 1st Class | http://sxx.youth.cn/zytz/hdgg/202112/W020211223591937418265.pdf |
-| Prof Guanyi Li | http://gmxy.nufe.edu.cn/info/1020/4536.htm |
-| Deputy Mayor of Lhasa and Permanent Secretary of Tibet Chunlai Zhou | https://baike.baidu.com/item/周春来/44246 |
+| Dr Li | http://gmxy.nufe.edu.cn/info/1020/4536.htm |
+| Deputy Mayor of Lhasa and Permanent Secretary of Tibet Zhou | https://baike.baidu.com/item/周春来/44246 |
 | Reshaping Silver-Hair Industry with New Retailing: A Story of China | CertificateRSINR.pdf |
 | Prof Qifei Chen | http://gmxy.nufe.edu.cn/info/1020/4647.htm |
-| Prof Yingbao Huo | http://gsglxy.nufe.edu.cn/info/1064/1553.htm |
+| Prof Huo | http://gsglxy.nufe.edu.cn/info/1064/1553.htm |
 
 ## Owner-approved replacements
 
-The July 2026 refinement explicitly replaced three legacy mappings:
+The July 2026 refinements explicitly replaced nine legacy mappings:
 
 1. The former obfuscated address `tao.clovis.xu[at]outlook[dot]com` linked to Outlook was replaced by the current plain-text obfuscated address `tao.louie.xu[at]outlook[dot]com`; the hero `[Email]` button now scrolls to Contact.
-2. `“MathorCup” Mathematical Contest in Modelling` linked to the local certificate was replaced by `Economic and Mathematical Modelling` linked to the local certificate file.
+2. `“MathorCup” Mathematical Contest in Modelling` linked to the local certificate was replaced by `Economic and Mathematical Modelling` linked to the same local certificate file.
 3. Footer text `Tao Xu` linked to the former website URL was replaced by `Tao Louie` linked to the GitHub profile.
+4. `Dr Li Liu` was shortened to `Dr Liu` while retaining the same Fudan profile destination.
+5. `Dr Yi Zhu` was changed to `Prof Zhu` while retaining the same SUFE profile destination.
+6. `Prof Yabei Hu` was shortened to `Prof Hu` while retaining the same NUFE profile destination.
+7. `Prof Guanyi Li` was changed to `Dr Li` while retaining the same NUFE profile destination.
+8. `Deputy Mayor of Lhasa and Permanent Secretary of Tibet Chunlai Zhou` was shortened to `Deputy Mayor of Lhasa and Permanent Secretary of Tibet Zhou` while retaining the same destination.
+9. `Prof Yingbao Huo` was shortened to `Prof Huo` while retaining the same NUFE profile destination.
 
 ## Link-preservation rule
 

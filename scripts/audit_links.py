@@ -165,6 +165,30 @@ def approved_legacy_changes() -> set[tuple[str, str]]:
             normalise_text("Tao Xu"),
             normalise_href("https://taocxu.github.io/"),
         ),
+        (
+            normalise_text("Dr Li Liu"),
+            normalise_href("https://fddi.fudan.edu.cn/fddien/af/b1/c19479a307121/page.htm"),
+        ),
+        (
+            normalise_text("Dr Yi Zhu"),
+            normalise_href("https://cpi.sufe.edu.cn/45/1b/c13242a214299/page.htm"),
+        ),
+        (
+            normalise_text("Prof Yabei Hu"),
+            normalise_href("https://gmxy.nufe.edu.cn/info/1013/4509.htm"),
+        ),
+        (
+            normalise_text("Prof Guanyi Li"),
+            normalise_href("http://gmxy.nufe.edu.cn/info/1020/4536.htm"),
+        ),
+        (
+            normalise_text("Deputy Mayor of Lhasa and Permanent Secretary of Tibet Chunlai Zhou"),
+            normalise_href("https://baike.baidu.com/item/周春来/44246"),
+        ),
+        (
+            normalise_text("Prof Yingbao Huo"),
+            normalise_href("http://gsglxy.nufe.edu.cn/info/1064/1553.htm"),
+        ),
     }
 
 
