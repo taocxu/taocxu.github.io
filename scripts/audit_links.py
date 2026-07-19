@@ -150,6 +150,24 @@ def audit_local_targets(links: list[Link], root: Path) -> list[str]:
     return missing
 
 
+def approved_legacy_changes() -> set[tuple[str, str]]:
+    """Legacy mappings explicitly replaced by the site owner in July 2026."""
+    return {
+        (
+            normalise_text("tao.clovis.xu[at]outlook[dot]com"),
+            normalise_href("https://outlook.live.com"),
+        ),
+        (
+            normalise_text('"MathorCup" Mathematical Contest in Modelling'),
+            normalise_href("CertificateMMCM.pdf"),
+        ),
+        (
+            normalise_text("Tao Xu"),
+            normalise_href("https://taocxu.github.io/"),
+        ),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--baseline", default="eaef20cad5af4f34270cf0ab94ae67c6486bc4b0")
@@ -163,12 +181,19 @@ def main() -> int:
     baseline_links = extract_links(baseline_source)
     current_links = extract_links(current_source)
     current_by_href = group_links(current_links)
+    approved = approved_legacy_changes()
 
     missing_destinations: list[Link] = []
     moved_or_changed_text: list[tuple[Link, list[str]]] = []
     preserved = 0
+    approved_count = 0
 
     for old in baseline_links:
+        mapping = (normalise_text(old.text), normalise_href(old.href))
+        if mapping in approved:
+            approved_count += 1
+            continue
+
         candidates = current_by_href.get(normalise_href(old.href), [])
         if not candidates:
             missing_destinations.append(old)
@@ -182,9 +207,10 @@ def main() -> int:
     missing_local = audit_local_targets(current_links, Path.cwd())
 
     print("Legacy hyperlink preservation audit")
-    print(f"Baseline links found: {len(baseline_links)}")
-    print(f"Current links found:  {len(current_links)}")
-    print(f"Preserved mappings:   {preserved}")
+    print(f"Baseline links found:       {len(baseline_links)}")
+    print(f"Current links found:        {len(current_links)}")
+    print(f"Preserved mappings:         {preserved}")
+    print(f"Owner-approved replacements:{approved_count:>9}")
 
     if missing_destinations:
         print("\nMissing legacy destinations:")
@@ -207,7 +233,7 @@ def main() -> int:
         print(f"\nFAILED: {errors} issue(s) require review.")
         return 1
 
-    print("\nPASSED: every legacy destination remains attached to the same words, and all local targets exist.")
+    print("\nPASSED: all non-exempt legacy mappings remain intact, approved replacements are documented, and all local targets exist.")
     return 0
 
 
