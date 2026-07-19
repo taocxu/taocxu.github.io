@@ -21,7 +21,7 @@ This file records the link text-to-destination relationships governing the redes
 
 | Linked text | Destination |
 |---|---|
-| University of Edinburgh | https://www.sps.ed.ac.uk/ |
+| The University of Edinburgh | https://www.sps.ed.ac.uk/ |
 | Hazel Gray, Ph.D., Senior Lecturer in African Studies & International Development | https://www.sps.ed.ac.uk/staff/hazel-gray |
 | Nanjing University of Finance & Economics | http://english.nufe.edu.cn/ |
 | Yabei Hu, Ph.D., Professor of Industrial Economics | https://gmxy.nufe.edu.cn/info/1019/4537.htm |
@@ -74,10 +74,10 @@ This file records the link text-to-destination relationships governing the redes
 
 | Linked text | Destination |
 |---|---|
-| DKU (Kunshan, Suzhou) | DKU.pdf |
-| Deloitte (Industrial Park, Suzhou) | Deloitte.pdf |
-| Mazars (Industrial Park, Suzhou) | Mazars.pdf |
-| CITIC (Kunshan, Suzhou) | CITIC.pdf |
+| Duke Kunshan University (Kunshan) | DKU.pdf |
+| Deloitte (Suzhou) | Deloitte.pdf |
+| Mazars (Suzhou) | Mazars.pdf |
+| CITIC (Kunshan) | CITIC.pdf |
 | Dr Liu | https://fddi.fudan.edu.cn/fddien/af/b1/c19479a307121/page.htm |
 | Prof Zhu | https://cpi.sufe.edu.cn/45/1b/c13242a214299/page.htm |
 | Prof Hu | https://gmxy.nufe.edu.cn/info/1013/4509.htm |
@@ -85,12 +85,12 @@ This file records the link text-to-destination relationships governing the redes
 | Dr Li | http://gmxy.nufe.edu.cn/info/1020/4536.htm |
 | Deputy Mayor of Lhasa and Permanent Secretary of Tibet Zhou | https://baike.baidu.com/item/周春来/44246 |
 | Reshaping Silver-Hair Industry with New Retailing: A Story of China | CertificateRSINR.pdf |
-| Prof Qifei Chen | http://gmxy.nufe.edu.cn/info/1020/4647.htm |
+| Prof Chen | http://gmxy.nufe.edu.cn/info/1020/4647.htm |
 | Prof Huo | http://gsglxy.nufe.edu.cn/info/1064/1553.htm |
 
 ## Owner-approved replacements
 
-The July 2026 refinements explicitly replaced ten legacy mappings:
+The July 2026 refinements explicitly replaced sixteen legacy mappings:
 
 1. The former obfuscated address `tao.clovis.xu[at]outlook[dot]com` linked to Outlook was replaced by `tao.louie.xu[at]outlook[dot]com`, displayed in the hero and Contact section and linked to `mailto:tao.louie.xu+webpage@gmail.com`; the redundant hero `[Email]` button was removed.
 2. `“MathorCup” Mathematical Contest in Modelling` linked to the local certificate was replaced by `Economic and Mathematical Modelling` linked to the same local certificate file.
@@ -102,6 +102,12 @@ The July 2026 refinements explicitly replaced ten legacy mappings:
 8. `Deputy Mayor of Lhasa and Permanent Secretary of Tibet Chunlai Zhou` was shortened to `Deputy Mayor of Lhasa and Permanent Secretary of Tibet Zhou` while retaining the same destination.
 9. `Prof Yingbao Huo` was shortened to `Prof Huo` while retaining the same NUFE profile destination.
 10. `[CV]` was changed from the local `CV.pdf` destination to the owner-specified Google Drive file.
+11. `University of Edinburgh` was changed to `The University of Edinburgh` while retaining the same SPS destination.
+12. `DKU (Kunshan, Suzhou)` was expanded to `Duke Kunshan University (Kunshan)` while retaining the same local PDF destination.
+13. `Deloitte (Industrial Park, Suzhou)` was shortened to `Deloitte (Suzhou)` while retaining the same local PDF destination.
+14. `Mazars (Industrial Park, Suzhou)` was shortened to `Mazars (Suzhou)` while retaining the same local PDF destination.
+15. `CITIC (Kunshan, Suzhou)` was shortened to `CITIC (Kunshan)` while retaining the same local PDF destination.
+16. `Prof Qifei Chen` was shortened to `Prof Chen` while retaining the same NUFE profile destination.
 
 ## Link-preservation rule
 

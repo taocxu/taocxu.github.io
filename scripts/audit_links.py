@@ -193,6 +193,30 @@ def approved_legacy_changes() -> set[tuple[str, str]]:
             normalise_text("[CV]"),
             normalise_href("CV.pdf"),
         ),
+        (
+            normalise_text("University of Edinburgh"),
+            normalise_href("https://www.sps.ed.ac.uk/"),
+        ),
+        (
+            normalise_text("DKU (Kunshan, Suzhou)"),
+            normalise_href("DKU.pdf"),
+        ),
+        (
+            normalise_text("Deloitte (Industrial Park, Suzhou)"),
+            normalise_href("Deloitte.pdf"),
+        ),
+        (
+            normalise_text("Mazars (Industrial Park, Suzhou)"),
+            normalise_href("Mazars.pdf"),
+        ),
+        (
+            normalise_text("CITIC (Kunshan, Suzhou)"),
+            normalise_href("CITIC.pdf"),
+        ),
+        (
+            normalise_text("Prof Qifei Chen"),
+            normalise_href("http://gmxy.nufe.edu.cn/info/1020/4647.htm"),
+        ),
     }
 
 
