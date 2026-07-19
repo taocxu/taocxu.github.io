@@ -25,7 +25,7 @@ This file records the link text-to-destination relationships governing the redes
 | Hazel Gray, Ph.D., Senior Lecturer in African Studies & International Development | https://www.sps.ed.ac.uk/staff/hazel-gray |
 | Nanjing University of Finance & Economics | http://english.nufe.edu.cn/ |
 | Yabei Hu, Ph.D., Professor of Industrial Economics | https://gmxy.nufe.edu.cn/info/1019/4537.htm |
-| Chinese Academy of Sciences | https://sem.ucas.ac.cn/en |
+| University of Chinese Academy of Sciences | https://sem.ucas.ac.cn/en |
 | [Certificate] for UCAS | UCASRoP.pdf |
 | Shanghai University of Finance and Economics | https://econ.sufe.edu.cn/main.htm |
 | Nanjing Agricultural University | https://english.njau.edu.cn/ |
@@ -90,7 +90,7 @@ This file records the link text-to-destination relationships governing the redes
 
 ## Owner-approved replacements
 
-The July 2026 refinements explicitly replaced sixteen legacy mappings:
+The July 2026 refinements explicitly replaced seventeen legacy mappings:
 
 1. The former obfuscated address `tao.clovis.xu[at]outlook[dot]com` linked to Outlook was replaced by `tao.louie.xu[at]outlook[dot]com`, displayed in the hero and Contact section and linked to `mailto:tao.louie.xu+webpage@gmail.com`; the redundant hero `[Email]` button was removed.
 2. `“MathorCup” Mathematical Contest in Modelling` linked to the local certificate was replaced by `Economic and Mathematical Modelling` linked to the same local certificate file.
@@ -108,6 +108,7 @@ The July 2026 refinements explicitly replaced sixteen legacy mappings:
 14. `Mazars (Industrial Park, Suzhou)` was shortened to `Mazars (Suzhou)` while retaining the same local PDF destination.
 15. `CITIC (Kunshan, Suzhou)` was shortened to `CITIC (Kunshan)` while retaining the same local PDF destination.
 16. `Prof Qifei Chen` was shortened to `Prof Chen` while retaining the same NUFE profile destination.
+17. `Chinese Academy of Sciences` was expanded to `University of Chinese Academy of Sciences` while retaining the same UCAS destination.
 
 ## Link-preservation rule
 

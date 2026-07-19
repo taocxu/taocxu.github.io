@@ -217,6 +217,10 @@ def approved_legacy_changes() -> set[tuple[str, str]]:
             normalise_text("Prof Qifei Chen"),
             normalise_href("http://gmxy.nufe.edu.cn/info/1020/4647.htm"),
         ),
+        (
+            normalise_text("Chinese Academy of Sciences"),
+            normalise_href("https://sem.ucas.ac.cn/en"),
+        ),
     }
 
 
