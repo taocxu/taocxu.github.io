@@ -2,6 +2,7 @@
 from pathlib import Path
 
 
+# One-shot owner-approved refinement script.
 def replace_once(text: str, old: str, new: str, label: str) -> str:
     count = text.count(old)
     if count != 1:
