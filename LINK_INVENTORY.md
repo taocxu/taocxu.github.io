@@ -51,7 +51,7 @@ This file records the link text-to-destination relationships governing the redes
 | ‘Why Cities Backfire? High-Speed Railway New Town Planning and Urban Structural Change’ | https://doi.org/10.21203/rs.3.rs-7374795/v2 |
 | ‘When Polanyi Met Schumpeter: Social Trust and Entrepreneurship’ | https://mpra.ub.uni-muenchen.de/123894/ |
 | ‘The Third Way: Reinterpreting the Political Settlements Framework with Structuration Theory’ | https://doi.org/10.31235/osf.io/nmvhq |
-| ‘The Road Not Taken? Industrial Policy and Political Settlements in China and Indonesia 1990–2022’ | https://mpra.ub.uni-muenchen.de/id/eprint/122669 |
+| ‘The Road Not Taken? Industrial Policy and Political Settlements in China and Indonesia 1990–2022’ | http://dx.doi.org/10.2139/ssrn.5085509 |
 | ‘It Takes Three to Ceilidh: Pension System and Multidimensional Poverty Mitigation in China’ | https://doi.org/10.48550/arXiv.2411.02807 |
 | [PDF] for ‘It Takes Three to Ceilidh’ | PSMPM.pdf |
 | ‘Peasant Life in Changing China: Rural Pension System Reform and Social Insurance Participation’ | https://doi.org/10.48550/arXiv.2204.00785 |
