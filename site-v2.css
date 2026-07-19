@@ -370,6 +370,15 @@ main { display: block; }
   border-top: 0;
 }
 
+.training-list {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.support-list li.institution-gap {
+  margin-top: 10px;
+}
+
 .training-list li:first-child,
 .support-list li:first-child {
   padding-top: 0;
