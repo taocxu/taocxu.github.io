@@ -1,6 +1,6 @@
 # Hyperlink Inventory
 
-This file records the link text-to-destination relationships governing the redesign. The production branch remains `gh-pages`; redesign work is isolated on `feature/google-sites-v2`.
+This file records the link text-to-destination relationships governing the published redesign on `gh-pages`. The original site remains preserved on `archive/site-v1-2026-07-19`.
 
 ## Current profile and identity links
 
@@ -8,12 +8,12 @@ This file records the link text-to-destination relationships governing the redes
 |---|---|---|
 | Graduate School of Social and Political Science | https://www.sps.ed.ac.uk/ | Preserved |
 | The University of Edinburgh | https://www.ed.ac.uk/ | Preserved |
-| [CV] | https://drive.google.com/file/d/1KK9XKIFsuQbmF-dt_7UL8yj2v2Q2wZtI/view?usp=sharing | Owner-approved replacement for the former local PDF link |
-| [LinkedIn] | https://www.linkedin.com/in/tao-c-xu | Preserved beside other profile links |
-| [ORCID] | https://orcid.org/0000-0003-0510-3343 | Preserved beside other profile links |
-| [GoogleScholar] | https://scholar.google.com/citations?user=KSSSjNQAAAAJ&hl=en | Added |
-| [SSRN] | https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434 | Added |
-| [ResearchGate] | https://www.researchgate.net/profile/Tao-Xu-168?ev=hdr_xprf | Added |
+| CV | https://drive.google.com/file/d/1KK9XKIFsuQbmF-dt_7UL8yj2v2Q2wZtI/view?usp=sharing | Owner-approved replacement for the former local PDF link |
+| LinkedIn | https://www.linkedin.com/in/tao-c-xu | Preserved beside other profile links |
+| ORCID | https://orcid.org/0000-0003-0510-3343 | Preserved beside other profile links |
+| GoogleScholar | https://scholar.google.com/citations?user=KSSSjNQAAAAJ&hl=en | Added |
+| SSRN | https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434 | Added |
+| ResearchGate | https://www.researchgate.net/profile/Tao-Xu-168?ev=hdr_xprf | Added |
 | tao.louie.xu[at]outlook[dot]com | mailto:tao.louie.xu+webpage@gmail.com | Displayed in the hero and Contact section; the former hero [Email] button was removed |
 | Tao Louie | https://github.com/taocxu | Owner-approved replacement for the former footer link |
 
