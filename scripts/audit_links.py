@@ -221,6 +221,38 @@ def approved_legacy_changes() -> set[tuple[str, str]]:
             normalise_text("Chinese Academy of Sciences"),
             normalise_href("https://sem.ucas.ac.cn/en"),
         ),
+        (
+            normalise_text("[Certificate]"),
+            normalise_href("UCASRoP.pdf"),
+        ),
+        (
+            normalise_text("[Certificate-Outstanding Student Award]"),
+            normalise_href("NAURoP.pdf"),
+        ),
+        (
+            normalise_text("[Certificate-Distinguished Paper Award]"),
+            normalise_href("WHURoP.pdf"),
+        ),
+        (
+            normalise_text("[Certificate-Outstanding Student Award]"),
+            normalise_href("NNURoP.pdf"),
+        ),
+        (
+            normalise_text("[Certificate-Excellent A]"),
+            normalise_href("RoP&Transcript.pdf"),
+        ),
+        (
+            normalise_text("Edinburgh CAS, Landlord State and Precarious Urban Agriculture in Accra"),
+            normalise_href("https://www.sps.ed.ac.uk/news-events/event/when-state-your-landlord-precarity-urban-agriculture-accra"),
+        ),
+        (
+            normalise_text("Edinburgh CAS, Political Economy of Extractivist Development in Ghana"),
+            normalise_href("https://www.sps.ed.ac.uk/news-events/event/political-economy-extractivist-development-ghana"),
+        ),
+        (
+            normalise_text("Edinburgh CAS, Global Politics of African Identity: Pan-Africanism & Afropolitanism"),
+            normalise_href("https://www.sps.ed.ac.uk/news-events/event/global-politics-african-identity-pan-africanism-and-challenge-afropolitanism"),
+        ),
     }
 
 
@@ -260,13 +292,13 @@ def main() -> int:
         else:
             moved_or_changed_text.append((old, [candidate.text for candidate in candidates]))
 
-    missing_local = audit_local_targets(current_links, Path.cwd())
+    local_errors = audit_local_targets(current_links, Path.cwd())
 
     print("Legacy hyperlink preservation audit")
     print(f"Baseline links found:       {len(baseline_links)}")
     print(f"Current links found:        {len(current_links)}")
     print(f"Preserved mappings:         {preserved}")
-    print(f"Owner-approved replacements:{approved_count:>9}")
+    print(f"Owner-approved replacements:       {approved_count}")
 
     if missing_destinations:
         print("\nMissing legacy destinations:")
@@ -277,19 +309,19 @@ def main() -> int:
         print("\nLegacy destinations attached to changed words:")
         for old, current_texts in moved_or_changed_text:
             print(f"- OLD {old.text!r} -> {old.href}")
-            print(f"  NOW {current_texts!r}")
+            print(f"  NOW {current_texts}")
 
-    if missing_local:
-        print("\nBroken local or fragment targets:")
-        for error in missing_local:
+    if local_errors:
+        print("\nLocal target errors:")
+        for error in local_errors:
             print(f"- {error}")
 
-    errors = len(missing_destinations) + len(moved_or_changed_text) + len(missing_local)
-    if errors:
-        print(f"\nFAILED: {errors} issue(s) require review.")
+    failures = len(missing_destinations) + len(moved_or_changed_text) + len(local_errors)
+    if failures:
+        print(f"\nFAILED: {failures} issue(s) require review.")
         return 1
 
-    print("\nPASSED: all non-exempt legacy mappings remain intact, approved replacements are documented, and all local targets exist.")
+    print("\nPASSED: all non-exempt legacy mappings and local targets are intact.")
     return 0
 
 
