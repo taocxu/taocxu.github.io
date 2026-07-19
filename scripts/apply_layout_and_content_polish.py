@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import re
 
 
 def replace_once(text: str, old: str, new: str, label: str) -> str:
@@ -10,177 +9,56 @@ def replace_once(text: str, old: str, new: str, label: str) -> str:
     return text.replace(old, new, 1)
 
 
-index_path = Path("index.html")
-css_path = Path("site-v2.css")
 audit_path = Path("scripts/audit_links.py")
 inventory_path = Path("LINK_INVENTORY.md")
-
-html = index_path.read_text(encoding="utf-8")
-css = css_path.read_text(encoding="utf-8")
 audit = audit_path.read_text(encoding="utf-8")
 inventory = inventory_path.read_text(encoding="utf-8")
-
-html = replace_once(
-    html,
-    '''          <ul class="research-interest-list">
-            <li>Political Economy of Development</li>
-            <li>Political Economy of Institutions</li>
-            <li>Political Settlements Framework</li>
-            <li>Evolutionary Institutional Economics</li>
-            <li>Development Economics</li>
-            <li>Institutional and Ideological Change</li>
-            <li>Distribution of Power and Rents</li>
-            <li>Critical Urban and Global Development Studies</li>
-            <li>Industrial Policy and Development</li>
-            <li>Micro-foundations of Industrial Policy</li>
-          </ul>''',
-    '''          <ul class="research-interest-list">
-            <li>Critical Urban and Global Development Studies</li>
-            <li>Development Economics</li>
-            <li>Distribution of Power &amp; Rents</li>
-            <li>Evolutionary Institutional Economics</li>
-            <li>Industrial Policy and Development</li>
-            <li>Institutional &amp; Ideological Change</li>
-            <li>Micro-foundations of Industrial Policy</li>
-            <li>Political Economy of Development</li>
-            <li>Political Economy of Institutions</li>
-            <li>Political Settlements Framework</li>
-          </ul>''',
-    "research-interest ordering",
-)
-
-for old, new in [
-    ('>[CV]</a>', '>CV</a>'),
-    ('>[ORCID]</a>', '>ORCID</a>'),
-    ('>[LinkedIn]</a>', '>LinkedIn</a>'),
-    ('>[GoogleScholar]</a>', '>GoogleScholar</a>'),
-    ('>[ResearchGate]</a>', '>ResearchGate</a>'),
-    ('>[SSRN]</a>', '>SSRN</a>'),
-]:
-    html = replace_once(html, old, new, f"profile label {new}")
-
-html = html.replace('<strong><strong><strong>Supervisor:</strong></strong></strong>', '<strong>Supervisor:</strong>')
-html = html.replace('<strong><strong>Dissertation:</strong></strong>', '<strong>Dissertation:</strong>')
-html = html.replace('                  Supervisor: <a href="https://www.sps.ed.ac.uk/staff/hazel-gray">', '                  <strong>Supervisor:</strong> <a href="https://www.sps.ed.ac.uk/staff/hazel-gray">', 1)
-html = html.replace('                <p>Dissertation: ‘Towards Sustainable Prosperity?', '                <p><strong>Dissertation:</strong> ‘Towards Sustainable Prosperity?', 1)
-html = html.replace('                  Supervisor: <a href="https://gmxy.nufe.edu.cn/info/1019/4537.htm">', '                  <strong>Supervisor:</strong> <a href="https://gmxy.nufe.edu.cn/info/1019/4537.htm">', 1)
-
-html = replace_once(html, '<h3>Nanjing University of Finance and Economics</h3>', '<h3>Nanjing University of Finance and Economics (Nanjing)</h3>', "Nanjing experience location")
-
-html = replace_once(html, '<ul class="training-list">', '<ul class="training-list grouped-list">', "training grouped-list class")
-html = replace_once(html, '<li>Economic and Mathematical Modelling - Chinese Society for Optimisation &amp; Economic Mathematics, 2021</li>', '<li class="group-start">Economic and Mathematical Modelling - Chinese Society for Optimisation &amp; Economic Mathematics, 2021</li>', "modelling group start")
-html = replace_once(html, '<li>Firm Innovation Strategy Seminar, Profs Xiaobo Wu &amp; Wenwei Xu - Fudan Centre for Technovation Strategy, Dec 2025</li>', '<li class="group-start">Firm Innovation Strategy Seminar, Profs Xiaobo Wu &amp; Wenwei Xu - Fudan Centre for Technovation Strategy, Dec 2025</li>', "seminar group start")
-
-html = replace_once(
-    html,
-    '''          <ul class="support-list">
-            <li>National Social Science Fund of China</li>
-            <li>PRC Ministry of Education</li>
-            <li>Kunshan Federation of Humanities and Social Sciences Circles</li>
-            <li>HQSW Agency for Foreign Affairs Administration</li>
-            <li>Nanjing University of Finance and Economics</li>
-            <li>SOAS University of London</li>
-            <li>University of Edinburgh</li>
-            <li>School of International Economics and Business (NUFE)</li>
-            <li>Fudan Development Institute (Fudan University)</li>
-            <li>Shanghai, Jiangsu, Kunshan, Shuyang Governments and Affiliated Public Bodies</li>
-            <li>Jiangsu Administration for Market Regulation</li>
-            <li>Kunshan Office of Foreign Affairs</li>
-            <li>Kunshan Bureau of Finance</li>
-            <li>Kunshan Administration for Market Regulation</li>
-            <li>Kunshan Office of Press and Communication</li>
-          </ul>''',
-    '''          <ul class="support-list grouped-list">
-            <li>National Social Science Fund of China</li>
-            <li>PRC Ministry of Education</li>
-            <li class="group-start">Kunshan Federation of Humanities and Social Sciences Circles</li>
-            <li>HQSW Agency for Foreign Affairs Administration</li>
-            <li class="group-start">Nanjing University of Finance and Economics (Nanjing)</li>
-            <li>School of International Economics and Business (NUFE)</li>
-            <li>SOAS University of London</li>
-            <li>University of Edinburgh</li>
-            <li>Fudan University</li>
-            <li>Fudan Development Institute (Fudan University)</li>
-            <li class="group-start">Shanghai, Jiangsu, Kunshan, Shuyang Governments and Affiliated Public Bodies</li>
-            <li>Jiangsu Administration for Market Regulation</li>
-            <li>Kunshan Office of Foreign Affairs</li>
-            <li>Kunshan Bureau of Finance</li>
-            <li>Kunshan Administration for Market Regulation</li>
-            <li>Kunshan Office of Press and Communication</li>
-          </ul>''',
-    "support-list grouping",
-)
-
-parts = re.split(r'(<[^>]+>)', html)
-for i, part in enumerate(parts):
-    if not part.startswith('<'):
-        parts[i] = re.sub(r'\s*·\s*', '&nbsp;&nbsp;·&nbsp;&nbsp;', part)
-html = ''.join(parts)
-
-css = replace_once(
-    css,
-    '''.training-list li,
-.compact-list li,
-.support-list li {
-  padding: 10px 0;
-  border-top: 1px solid #eceff1;
-}
-
-.training-list li:first-child,
-.compact-list li:first-child,
-.support-list li:first-child {
-  border-top: 0;
-  padding-top: 0;
-}''',
-    '''.compact-list li {
-  padding: 10px 0;
-  border-top: 1px solid #eceff1;
-}
-
-.compact-list li:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.training-list li,
-.support-list li {
-  padding: 7px 0;
-  border-top: 0;
-}
-
-.training-list li:first-child,
-.support-list li:first-child {
-  padding-top: 0;
-}
-
-.training-list li.group-start,
-.support-list li.group-start {
-  margin-top: 8px;
-  padding-top: 16px;
-  border-top: 1px solid #eceff1;
-}''',
-    "grouped-list separators",
-)
 
 audit = replace_once(
     audit,
     '''        (
-            normalise_text("[CV]"),
-            normalise_href("CV.pdf"),
-        ),''',
+            normalise_text("Chinese Academy of Sciences"),
+            normalise_href("https://sem.ucas.ac.cn/en"),
+        ),
+    }''',
     '''        (
-            normalise_text("[CV]"),
-            normalise_href("CV.pdf"),
+            normalise_text("Chinese Academy of Sciences"),
+            normalise_href("https://sem.ucas.ac.cn/en"),
         ),
         (
-            normalise_text("[ORCID]"),
-            normalise_href("https://orcid.org/0000-0003-0510-3343"),
+            normalise_text("[Certificate]"),
+            normalise_href("UCASRoP.pdf"),
         ),
         (
-            normalise_text("[LinkedIn]"),
-            normalise_href("https://www.linkedin.com/in/tao-c-xu"),
-        ),''',
-    "profile-label audit exceptions",
+            normalise_text("[Certificate-Outstanding Student Award]"),
+            normalise_href("NAURoP.pdf"),
+        ),
+        (
+            normalise_text("[Certificate-Distinguished Paper Award]"),
+            normalise_href("WHURoP.pdf"),
+        ),
+        (
+            normalise_text("[Certificate-Outstanding Student Award]"),
+            normalise_href("NNURoP.pdf"),
+        ),
+        (
+            normalise_text("[Certificate-Excellent A]"),
+            normalise_href("RoP&Transcript.pdf"),
+        ),
+        (
+            normalise_text("Edinburgh CAS, Landlord State and Precarious Urban Agriculture in Accra"),
+            normalise_href("https://www.sps.ed.ac.uk/news-events/event/when-state-your-landlord-precarity-urban-agriculture-accra"),
+        ),
+        (
+            normalise_text("Edinburgh CAS, Political Economy of Extractivist Development in Ghana"),
+            normalise_href("https://www.sps.ed.ac.uk/news-events/event/political-economy-extractivist-development-ghana"),
+        ),
+        (
+            normalise_text("Edinburgh CAS, Global Politics of African Identity: Pan-Africanism & Afropolitanism"),
+            normalise_href("https://www.sps.ed.ac.uk/news-events/event/global-politics-african-identity-pan-africanism-and-challenge-afropolitanism"),
+        ),
+    }''',
+    "approved legacy changes",
 )
 
 for old, new in [
@@ -193,7 +71,26 @@ for old, new in [
 ]:
     inventory = inventory.replace(old, new)
 
-index_path.write_text(html, encoding="utf-8")
-css_path.write_text(css, encoding="utf-8")
+inventory = replace_once(
+    inventory,
+    'The July 2026 refinements explicitly replaced seventeen legacy mappings:',
+    'The July 2026 refinements explicitly replaced twenty-five legacy mappings:',
+    "replacement count",
+)
+inventory = replace_once(
+    inventory,
+    '17. `Chinese Academy of Sciences` was expanded to `University of Chinese Academy of Sciences` while retaining the same UCAS destination.',
+    '''17. `Chinese Academy of Sciences` was expanded to `University of Chinese Academy of Sciences` while retaining the same UCAS destination.
+18. The UCAS certificate label and link were temporarily removed from the public page.
+19. The Nanjing Agricultural University certificate label and link were temporarily removed from the public page.
+20. The Wuhan University certificate label and link were temporarily removed from the public page.
+21. The Nanjing Normal University certificate label and link were temporarily removed from the public page.
+22. The UCLA and University of Saint Joseph certificate label and link were temporarily removed from the public page.
+23. The Landlord State seminar link was moved from the full seminar title to `Centre of African Studies, The University of Edinburgh`.
+24. The Extractivist Development seminar link was moved from the full seminar title to `Centre of African Studies, The University of Edinburgh`.
+25. The African Identity seminar link was moved from the full seminar title to `Centre of African Studies, The University of Edinburgh`.''',
+    "replacement log",
+)
+
 audit_path.write_text(audit, encoding="utf-8")
 inventory_path.write_text(inventory, encoding="utf-8")
