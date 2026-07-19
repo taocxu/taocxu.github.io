@@ -371,7 +371,9 @@ main { display: block; }
   border-top: 0;
 }
 
-.training-list {
+.training-list,
+.support-list,
+#activities .section-body > p {
   font-size: 0.92rem;
   line-height: 1.5;
 }
