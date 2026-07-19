@@ -1,0 +1,90 @@
+# Hyperlink Inventory
+
+This file records the link text-to-destination relationships that must be preserved during the website redesign. The production branch remains `gh-pages`; redesign work is isolated on `feature/google-sites-v2`.
+
+## Current profile and identity links
+
+| Linked text | Destination | Treatment in v2 |
+|---|---|---|
+| Graduate School of Social and Political Science | https://www.sps.ed.ac.uk/ | Preserve |
+| The University of Edinburgh | https://www.ed.ac.uk/ | Preserve |
+| tao.clovis.xu[at]outlook[dot]com | https://outlook.live.com | Preserve |
+| [CV] | CV.pdf | Preserve |
+| [LinkedIn] | https://www.linkedin.com/in/tao-c-xu | Preserve and place beside other profile links |
+| [ORCID] | https://orcid.org/0000-0003-0510-3343 | Preserve and place beside other profile links |
+| Google Scholar | https://scholar.google.com/citations?user=KSSSjNQAAAAJ | Add |
+| SSRN | https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434 | Add |
+| ResearchGate | https://www.researchgate.net/profile/Tao-Xu-168?ev=hdr_xprf | Add |
+
+## Education and academic training
+
+| Linked text | Destination |
+|---|---|
+| University of Edinburgh | https://www.sps.ed.ac.uk/ |
+| Hazel Gray, Ph.D., Senior Lecturer in African Studies & International Development | https://www.sps.ed.ac.uk/staff/hazel-gray |
+| Nanjing University of Finance & Economics | http://english.nufe.edu.cn/ |
+| Yabei Hu, Ph.D., Professor of Industrial Economics | https://gmxy.nufe.edu.cn/info/1019/4537.htm |
+| Chinese Academy of Sciences | https://sem.ucas.ac.cn/en |
+| [Certificate] for UCAS | UCASRoP.pdf |
+| Shanghai University of Finance and Economics | https://econ.sufe.edu.cn/main.htm |
+| Nanjing Agricultural University | https://english.njau.edu.cn/ |
+| [Certificate-Outstanding Student Award] for NAU | NAURoP.pdf |
+| Wuhan University | https://en.whu.edu.cn/ |
+| [Certificate-Distinguished Paper Award] for WHU | WHURoP.pdf |
+| Nanjing Normal University | https://en.njnu.edu.cn/ |
+| [Certificate-Outstanding Student Award] for NNU | NNURoP.pdf |
+| UCLA | https://www.ucla.edu |
+| University of Saint Joseph | https://www.usj.edu.mo/en/ |
+| [Certificate-Excellent A] | RoP&Transcript.pdf |
+| Edinburgh CAS, Landlord State and Precarious Urban Agriculture in Accra | https://www.sps.ed.ac.uk/news-events/event/when-state-your-landlord-precarity-urban-agriculture-accra |
+| Edinburgh CAS, Political Economy of Extractivist Development in Ghana | https://www.sps.ed.ac.uk/news-events/event/political-economy-extractivist-development-ghana |
+| Edinburgh CAS, Global Politics of African Identity: Pan-Africanism & Afropolitanism | https://www.sps.ed.ac.uk/news-events/event/global-politics-african-identity-pan-africanism-and-challenge-afropolitanism |
+
+## Publications and working papers
+
+| Linked text | Destination |
+|---|---|
+| ‘Towards Sustainable Prosperity? Policy Evaluation of Jiangsu Advanced Manufacturing Clusters’ | https://doi.org/10.1016/j.techsoc.2024.102583 |
+| [PDF] for ‘Towards Sustainable Prosperity?’ | TSP.pdf |
+| ‘When Polanyi Met Schumpeter: Social Trust and Entrepreneurship’ | https://mpra.ub.uni-muenchen.de/123894/ |
+| ‘The Third Way: Reinterpreting the Political Settlements Framework with Structuration Theory’ | https://doi.org/10.31235/osf.io/nmvhq |
+| ‘It Takes Three to Ceilidh: Pension System and Multidimensional Poverty Mitigation in China’ | https://doi.org/10.48550/arXiv.2411.02807 |
+| [PDF] for ‘It Takes Three to Ceilidh’ | PSMPM.pdf |
+| ‘Peasant Life in Changing China: Rural Pension System Reform and Social Insurance Participation’ | https://doi.org/10.48550/arXiv.2204.00785 |
+
+## Reports, presentations and reviews
+
+| Linked text | Destination |
+|---|---|
+| ‘Economic Growth, Poverty Mitigation and Social Policy in our Neoliberal Era: A Polanyian Perspective’ | https://www.researchgate.net/publication/385654163_Economic_Growth_Poverty_Mitigation_and_Social_Policy_in_our_Neoliberal_Era_A_Polanyian_Perspective |
+| ‘Transformative Communication in Development Organisation: Strategic Engagement and Celebrity Influence’ | https://www.researchgate.net/publication/386101696_Transformative_Communication_in_Development_Organisation_Strategic_Engagement_and_Celebrity_Influence |
+| ‘Belt of Productivity, Road to Equality: China’s Infrastructure Initiative as the “People First” Development in Indonesia’ | https://www.linkedin.com/in/tao-c-xu/details/education/ |
+| ‘Frontiers and Evolution of Employment Studies in China’ | https://mpra.ub.uni-muenchen.de/112908/ |
+| ‘Survey on Local Pharmaceutical Specialty Stores: Retail Formats and Elements’ | http://www.360doc.com/document/21/1226/15/78262026_1010436409.shtml |
+| ‘Mismatch and Dysfunction of the Ageing Economy: Digital Transformation in Silver-Hair Industry’ | https://doi.org/10.13395/j.cnki.issn.1009-0061.2021.10.001 |
+| ‘Reshaping Silver-Hair Industry with New Retailing: A SWOT-Based Strategy’ | https://doi.org/10.13939/j.cnki.zgsc.2021.15.082 |
+| ‘Survey on the Ageing Society in Rural Guannan: Consumption, Social Security and Manufacturing for Silver-Hair Economy’ | http://tw.nufe.edu.cn/info/1040/5660.htm |
+
+## Experience, programmes and certificates
+
+| Linked text | Destination |
+|---|---|
+| DKU (Kunshan, Suzhou) | DKU.pdf |
+| Deloitte (Industrial Park, Suzhou) | Deloitte.pdf |
+| Mazars (Industrial Park, Suzhou) | Mazars.pdf |
+| CITIC (Kunshan, Suzhou) | CITIC.pdf |
+| Dr Li Liu | https://fddi.fudan.edu.cn/fddien/af/b1/c19479a307121/page.htm |
+| Dr Yi Zhu | https://cpi.sufe.edu.cn/45/1b/c13242a214299/page.htm |
+| Prof Yabei Hu | https://gmxy.nufe.edu.cn/info/1013/4509.htm |
+| National Excellent Team Award, Provincial Special Team Award, NUFE Best Report Award 1st Class | http://sxx.youth.cn/zytz/hdgg/202112/W020211223591937418265.pdf |
+| ‘MathorCup’ Mathematical Contest in Modelling | CertificateMMCM.pdf |
+| Prof Guanyi Li | http://gmxy.nufe.edu.cn/info/1020/4536.htm |
+| Deputy Mayor of Lhasa and Permanent Secretary of Tibet Chunlai Zhou | https://baike.baidu.com/item/周春来/44246 |
+| Reshaping Silver-Hair Industry with New Retailing: A Story of China | CertificateRSINR.pdf |
+| Prof Qifei Chen | http://gmxy.nufe.edu.cn/info/1020/4647.htm |
+| Prof Yingbao Huo | http://gsglxy.nufe.edu.cn/info/1064/1553.htm |
+| Tao Xu | https://taocxu.github.io/ |
+
+## Link-preservation rule
+
+A visual redesign may change containers, typography, spacing and page order. It must not silently change a destination or detach an existing destination from its original linked words. New links may be added beside the preserved links. Any later relocation of a local PDF must include a compatible redirect or an unchanged public path.
