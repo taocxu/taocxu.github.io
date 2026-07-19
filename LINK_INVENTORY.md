@@ -1,20 +1,21 @@
 # Hyperlink Inventory
 
-This file records the link text-to-destination relationships that must be preserved during the website redesign. The production branch remains `gh-pages`; redesign work is isolated on `feature/google-sites-v2`.
+This file records the link text-to-destination relationships governing the redesign. The production branch remains `gh-pages`; redesign work is isolated on `feature/google-sites-v2`.
 
 ## Current profile and identity links
 
 | Linked text | Destination | Treatment in v2 |
 |---|---|---|
-| Graduate School of Social and Political Science | https://www.sps.ed.ac.uk/ | Preserve |
-| The University of Edinburgh | https://www.ed.ac.uk/ | Preserve |
-| tao.clovis.xu[at]outlook[dot]com | https://outlook.live.com | Preserve |
-| [CV] | CV.pdf | Preserve |
-| [LinkedIn] | https://www.linkedin.com/in/tao-c-xu | Preserve and place beside other profile links |
-| [ORCID] | https://orcid.org/0000-0003-0510-3343 | Preserve and place beside other profile links |
-| Google Scholar | https://scholar.google.com/citations?user=KSSSjNQAAAAJ | Add |
-| SSRN | https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434 | Add |
-| ResearchGate | https://www.researchgate.net/profile/Tao-Xu-168?ev=hdr_xprf | Add |
+| Graduate School of Social and Political Science | https://www.sps.ed.ac.uk/ | Preserved |
+| The University of Edinburgh | https://www.ed.ac.uk/ | Preserved |
+| [CV] | CV.pdf | Preserved |
+| [LinkedIn] | https://www.linkedin.com/in/tao-c-xu | Preserved beside other profile links |
+| [ORCID] | https://orcid.org/0000-0003-0510-3343 | Preserved beside other profile links |
+| [Google Scholar] | https://scholar.google.com/citations?user=KSSSjNQAAAAJ | Added |
+| [SSRN] | https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434 | Added |
+| [ResearchGate] | https://www.researchgate.net/profile/Tao-Xu-168?ev=hdr_xprf | Added |
+| [Email] | #contact | Replaced direct email action with an in-page link to the obfuscated address |
+| Tao Louie | https://github.com/taocxu | Owner-approved replacement for the former footer link |
 
 ## Education and academic training
 
@@ -36,6 +37,7 @@ This file records the link text-to-destination relationships that must be preser
 | UCLA | https://www.ucla.edu |
 | University of Saint Joseph | https://www.usj.edu.mo/en/ |
 | [Certificate-Excellent A] | RoP&Transcript.pdf |
+| Economic and Mathematical Modelling | https://raw.githack.com/taocxu/taocxu.github.io/feature/google-sites-v2/CertificateMMCM.pdf |
 | Edinburgh CAS, Landlord State and Precarious Urban Agriculture in Accra | https://www.sps.ed.ac.uk/news-events/event/when-state-your-landlord-precarity-urban-agriculture-accra |
 | Edinburgh CAS, Political Economy of Extractivist Development in Ghana | https://www.sps.ed.ac.uk/news-events/event/political-economy-extractivist-development-ghana |
 | Edinburgh CAS, Global Politics of African Identity: Pan-Africanism & Afropolitanism | https://www.sps.ed.ac.uk/news-events/event/global-politics-african-identity-pan-africanism-and-challenge-afropolitanism |
@@ -46,8 +48,10 @@ This file records the link text-to-destination relationships that must be preser
 |---|---|
 | ‘Towards Sustainable Prosperity? Policy Evaluation of Jiangsu Advanced Manufacturing Clusters’ | https://doi.org/10.1016/j.techsoc.2024.102583 |
 | [PDF] for ‘Towards Sustainable Prosperity?’ | TSP.pdf |
+| ‘Why Cities Backfire? High-Speed Railway New Town Planning and Urban Structural Change’ | https://doi.org/10.21203/rs.3.rs-7374795/v2 |
 | ‘When Polanyi Met Schumpeter: Social Trust and Entrepreneurship’ | https://mpra.ub.uni-muenchen.de/123894/ |
 | ‘The Third Way: Reinterpreting the Political Settlements Framework with Structuration Theory’ | https://doi.org/10.31235/osf.io/nmvhq |
+| ‘The Road Not Taken? Industrial Policy and Political Settlements in China and Indonesia 1990–2022’ | https://mpra.ub.uni-muenchen.de/id/eprint/122669 |
 | ‘It Takes Three to Ceilidh: Pension System and Multidimensional Poverty Mitigation in China’ | https://doi.org/10.48550/arXiv.2411.02807 |
 | [PDF] for ‘It Takes Three to Ceilidh’ | PSMPM.pdf |
 | ‘Peasant Life in Changing China: Rural Pension System Reform and Social Insurance Participation’ | https://doi.org/10.48550/arXiv.2204.00785 |
@@ -56,6 +60,7 @@ This file records the link text-to-destination relationships that must be preser
 
 | Linked text | Destination |
 |---|---|
+| ‘Endogenous Innovation of Firms: A Cross-layered Analytical Framework’ | https://fddi.fudan.edu.cn/9e/39/c19047a761401/page.htm |
 | ‘Economic Growth, Poverty Mitigation and Social Policy in our Neoliberal Era: A Polanyian Perspective’ | https://www.researchgate.net/publication/385654163_Economic_Growth_Poverty_Mitigation_and_Social_Policy_in_our_Neoliberal_Era_A_Polanyian_Perspective |
 | ‘Transformative Communication in Development Organisation: Strategic Engagement and Celebrity Influence’ | https://www.researchgate.net/publication/386101696_Transformative_Communication_in_Development_Organisation_Strategic_Engagement_and_Celebrity_Influence |
 | ‘Belt of Productivity, Road to Equality: China’s Infrastructure Initiative as the “People First” Development in Indonesia’ | https://www.linkedin.com/in/tao-c-xu/details/education/ |
@@ -77,14 +82,20 @@ This file records the link text-to-destination relationships that must be preser
 | Dr Yi Zhu | https://cpi.sufe.edu.cn/45/1b/c13242a214299/page.htm |
 | Prof Yabei Hu | https://gmxy.nufe.edu.cn/info/1013/4509.htm |
 | National Excellent Team Award, Provincial Special Team Award, NUFE Best Report Award 1st Class | http://sxx.youth.cn/zytz/hdgg/202112/W020211223591937418265.pdf |
-| ‘MathorCup’ Mathematical Contest in Modelling | CertificateMMCM.pdf |
 | Prof Guanyi Li | http://gmxy.nufe.edu.cn/info/1020/4536.htm |
 | Deputy Mayor of Lhasa and Permanent Secretary of Tibet Chunlai Zhou | https://baike.baidu.com/item/周春来/44246 |
 | Reshaping Silver-Hair Industry with New Retailing: A Story of China | CertificateRSINR.pdf |
 | Prof Qifei Chen | http://gmxy.nufe.edu.cn/info/1020/4647.htm |
 | Prof Yingbao Huo | http://gsglxy.nufe.edu.cn/info/1064/1553.htm |
-| Tao Xu | https://taocxu.github.io/ |
+
+## Owner-approved replacements
+
+The July 2026 refinement explicitly replaced three legacy mappings:
+
+1. The former obfuscated address `tao.clovis.xu[at]outlook[dot]com` linked to Outlook was replaced by the current plain-text obfuscated address `tao.louie.xu[at]outlook[dot]com`; the hero `[Email]` button now scrolls to Contact.
+2. `“MathorCup” Mathematical Contest in Modelling` linked to the local certificate was replaced by `Economic and Mathematical Modelling` linked to the branch preview certificate URL.
+3. Footer text `Tao Xu` linked to the former website URL was replaced by `Tao Louie` linked to the GitHub profile.
 
 ## Link-preservation rule
 
-A visual redesign may change containers, typography, spacing and page order. It must not silently change a destination or detach an existing destination from its original linked words. New links may be added beside the preserved links. Any later relocation of a local PDF must include a compatible redirect or an unchanged public path.
+A visual redesign may change containers, typography, spacing and page order. Existing mappings remain unchanged unless the site owner explicitly approves a replacement. New links may be added. Local PDFs and images must continue to resolve, and automated checks must document any approved exception.
