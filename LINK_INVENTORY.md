@@ -11,7 +11,7 @@ This file records the link text-to-destination relationships governing the redes
 | [CV] | https://drive.google.com/file/d/1KK9XKIFsuQbmF-dt_7UL8yj2v2Q2wZtI/view?usp=sharing | Owner-approved replacement for the former local PDF link |
 | [LinkedIn] | https://www.linkedin.com/in/tao-c-xu | Preserved beside other profile links |
 | [ORCID] | https://orcid.org/0000-0003-0510-3343 | Preserved beside other profile links |
-| [Google Scholar] | https://scholar.google.com/citations?user=KSSSjNQAAAAJ&hl=en | Added |
+| [GoogleScholar] | https://scholar.google.com/citations?user=KSSSjNQAAAAJ&hl=en | Added |
 | [SSRN] | https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434 | Added |
 | [ResearchGate] | https://www.researchgate.net/profile/Tao-Xu-168?ev=hdr_xprf | Added |
 | tao.louie.xu[at]outlook[dot]com | mailto:tao.louie.xu+webpage@gmail.com | Displayed in the hero and Contact section; the former hero [Email] button was removed |
