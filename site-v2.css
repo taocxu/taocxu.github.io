@@ -300,18 +300,32 @@ main { display: block; }
 .timeline-content h3 { margin: 0 0 3px; font-size: 1rem; }
 .timeline-content p { margin: 0; color: #3c4043; }
 
-.training-list li,
-.compact-list li,
-.support-list li {
+.compact-list li {
   padding: 10px 0;
   border-top: 1px solid #eceff1;
 }
 
-.training-list li:first-child,
-.compact-list li:first-child,
-.support-list li:first-child {
+.compact-list li:first-child {
   border-top: 0;
   padding-top: 0;
+}
+
+.training-list li,
+.support-list li {
+  padding: 7px 0;
+  border-top: 0;
+}
+
+.training-list li:first-child,
+.support-list li:first-child {
+  padding-top: 0;
+}
+
+.training-list li.group-start,
+.support-list li.group-start {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #eceff1;
 }
 
 .support-list li {
