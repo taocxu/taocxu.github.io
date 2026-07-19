@@ -304,6 +304,12 @@ main { display: block; }
 .timeline-content h3 { margin: 0 0 3px; font-size: 1rem; }
 .timeline-content p { margin: 0; color: #3c4043; }
 
+#projects .timeline-content p,
+#experience .timeline-content p {
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
 .compact-list li {
   padding: 10px 0;
   border-top: 1px solid #eceff1;
