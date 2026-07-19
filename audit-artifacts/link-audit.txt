@@ -1,7 +1,0 @@
-Legacy hyperlink preservation audit
-Baseline links found:       55
-Current links found:        77
-Preserved mappings:         29
-Owner-approved replacements:       26
-
-PASSED: all non-exempt legacy mappings and local targets are intact.
