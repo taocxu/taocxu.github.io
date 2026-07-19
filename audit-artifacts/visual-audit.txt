@@ -2,15 +2,6 @@
   OVERFLOW {'tag': 'a', 'id': '', 'cls': 'skip-link', 'text': 'Skip to Content', 'left': -9999, 'right': -9854, 'width': 145, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
 [tablet-900] viewport=900 scroll=900
   OVERFLOW {'tag': 'a', 'id': '', 'cls': 'skip-link', 'text': 'Skip to Content', 'left': -9999, 'right': -9854, 'width': 145, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
-[mobile-390] viewport=390 scroll=455
+[mobile-390] viewport=390 scroll=390
   OVERFLOW {'tag': 'a', 'id': '', 'cls': 'skip-link', 'text': 'Skip to Content', 'left': -9999, 'right': -9859, 'width': 140, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
-  OVERFLOW {'tag': 'div', 'id': '', 'cls': '', 'text': 'Political Economist of Development · tao.louie.xu[at]outlook[dot]com Tao Louie Lunhe Xu Upcoming PhD Student in Development Economics at SOA', 'left': 14, 'right': 455, 'width': 441, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
-  OVERFLOW {'tag': 'p', 'id': '', 'cls': 'eyebrow', 'text': 'Political Economist of Development · tao.louie.xu[at]outlook[dot]com', 'left': 14, 'right': 455, 'width': 441, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
-  OVERFLOW {'tag': 'a', 'id': '', 'cls': '', 'text': 'tao.louie.xu[at]outlook[dot]com', 'left': 157, 'right': 455, 'width': 298, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
-  OVERFLOW {'tag': 'h1', 'id': '', 'cls': '', 'text': 'Tao Louie Lunhe Xu', 'left': 14, 'right': 455, 'width': 441, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
-  OVERFLOW {'tag': 'p', 'id': '', 'cls': 'hero-role', 'text': 'Upcoming PhD Student in Development Economics at SOAS University of London', 'left': 14, 'right': 455, 'width': 441, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
-  OVERFLOW {'tag': 'p', 'id': '', 'cls': 'hero-affiliation', 'text': 'Industrial Policy · Political Settlements · Institutional and Ideological Change', 'left': 14, 'right': 455, 'width': 441, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
-  OVERFLOW {'tag': 'nav', 'id': '', 'cls': 'profile-links', 'text': 'CV ORCID LinkedIn GoogleScholar ResearchGate SSRN', 'left': 14, 'right': 455, 'width': 441, 'whiteSpace': 'normal', 'overflowWrap': 'normal'}
-Traceback (most recent call last):
-  File "<stdin>", line 45, in <module>
-RuntimeError: Horizontal overflow detected for: ['mobile-390']
+Desktop, tablet and mobile screenshots rendered without horizontal overflow.

@@ -497,6 +497,8 @@ main { display: block; }
   .nav-shell, .hero-shell, .content-section, .footer-shell { width: min(100% - 28px, var(--content)); }
   .site-nav a { padding: 7px 9px; font-size: 0.82rem; }
   .hero-shell { grid-template-columns: 1fr; gap: 30px; padding: 36px 0 46px; }
+  .hero-shell > * { min-width: 0; }
+  .eyebrow a { overflow-wrap: anywhere; }
   .portrait-frame { width: min(250px, 72vw); }
   .hero h1 { font-size: clamp(2.35rem, 12.5vw, 3.55rem); }
   .content-section { padding: 44px 0; }
