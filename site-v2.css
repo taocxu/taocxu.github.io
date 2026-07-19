@@ -48,7 +48,7 @@ img { display: block; max-width: 100%; }
 
 .site-name {
   color: var(--ink);
-  font-family: "Palatino Linotype", Palatino, Georgia, serif;
+  font-family: inherit;
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.005em;
@@ -265,6 +265,8 @@ main { display: block; }
 
 .item { padding: 21px 0; border-top: 1px solid var(--line); }
 .item:first-child { border-top: 0; padding-top: 0; }
+.item-list.no-dividers .item { border-top: 0; padding: 11px 0; }
+.item-list.no-dividers .item:first-child { padding-top: 0; }
 .item-title { margin: 0; color: var(--ink); font-size: 1.01rem; font-weight: 700; line-height: 1.45; }
 .item-title a { font-weight: 700; }
 .item-meta { margin: 5px 0 0; color: var(--muted); font-size: 0.94rem; }
@@ -296,6 +298,8 @@ main { display: block; }
 
 .timeline-item:first-child { border-top: 0; padding-top: 0; }
 #cv .timeline-item { grid-template-columns: 112px minmax(0, 1fr); gap: 16px; }
+#experience .timeline-item { border-top: 0; padding: 10px 0; }
+#experience .timeline-item:first-child { padding-top: 0; }
 .timeline-date { color: var(--muted); font-size: 0.91rem; font-weight: 700; }
 .timeline-content h3 { margin: 0 0 3px; font-size: 1rem; }
 .timeline-content p { margin: 0; color: #3c4043; }
@@ -308,6 +312,11 @@ main { display: block; }
 .compact-list li:first-child {
   border-top: 0;
   padding-top: 0;
+}
+
+.report-list li {
+  border-top: 0;
+  padding: 7px 0;
 }
 
 .training-list li,
