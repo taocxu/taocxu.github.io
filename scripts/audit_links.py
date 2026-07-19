@@ -51,7 +51,12 @@ class TolerantAnchorParser(HTMLParser):
             attributes = dict(attrs)
             self._href = attributes.get("href")
             self._text = []
-        elif self._href is not None and tag in {"br", "p", "li", "h1", "h2", "h3", "div", "section"}:
+        elif self._href is not None and tag == "br":
+            if "".join(self._text).strip():
+                self._finish()
+            else:
+                self._text.append(" ")
+        elif self._href is not None and tag in {"p", "li", "h1", "h2", "h3", "div", "section"}:
             self._finish()
 
     def handle_endtag(self, tag: str) -> None:
@@ -90,8 +95,9 @@ def normalise_text(value: str) -> str:
         }
     )
     value = value.translate(translations)
+    value = re.sub(r"[\"']", "", value)
     value = re.sub(r"\s+", " ", value).strip()
-    value = value.strip(" \t\r\n\"'[](),.;:")
+    value = value.strip(" \t\r\n[](),.;:")
     return value.casefold()
 
 
