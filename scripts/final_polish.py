@@ -13,11 +13,17 @@ def replace_if_present(text: str, old: str, new: str, label: str) -> str:
 
 
 index_path = Path('index.html')
+css_path = Path('site-v2.css')
 notes_path = Path('REDESIGN_NOTES.md')
 inventory_path = Path('LINK_INVENTORY.md')
-html = index_path.read_text(encoding='utf-8')
-inventory = inventory_path.read_text(encoding='utf-8')
+audit_path = Path('scripts/audit_links.py')
 
+html = index_path.read_text(encoding='utf-8')
+css = css_path.read_text(encoding='utf-8')
+inventory = inventory_path.read_text(encoding='utf-8')
+audit = audit_path.read_text(encoding='utf-8')
+
+html = replace_if_present(html, '<!doctype html>', '<!DOCTYPE html>', 'DOCTYPE')
 html = replace_if_present(
     html,
     'content="Academic Website of Tao Louie Lunhe Xu, Upcoming PhD Student Working on the Political Economy of Development."',
@@ -44,6 +50,53 @@ html = replace_if_present(
     'Law Society of England & Wales',
     'Law Society of England &amp; Wales',
     'Law Society ampersand',
+)
+html = replace_if_present(
+    html,
+    'WHU Outstanding Student & Distinguished Paper Award',
+    'WHU Outstanding Student &amp; Distinguished Paper Award',
+    'WHU award ampersand',
+)
+html = replace_if_present(
+    html,
+    '<div class="profile-links" aria-label="Academic profiles">',
+    '<nav class="profile-links" aria-label="Academic profiles">',
+    'academic profiles navigation opening',
+)
+html = replace_if_present(
+    html,
+    '''          <a href="https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434" target="_blank" rel="noopener">SSRN</a>
+        </div>''',
+    '''          <a href="https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434" target="_blank" rel="noopener">SSRN</a>
+        </nav>''',
+    'academic profiles navigation closing',
+)
+html = html.replace('<div class="key-modules" aria-label="Key modules">', '<div class="key-modules">')
+html = replace_if_present(
+    html,
+    '<div class="photo-gallery" aria-label="Selected personal photographs">',
+    '<div class="photo-gallery" role="group" aria-label="Selected personal photographs">',
+    'photo gallery group role',
+)
+html = replace_if_present(
+    html,
+    '<span>Development Draft&nbsp;&nbsp;·&nbsp;&nbsp;July 2026</span>',
+    '<span>Last updated&nbsp;&nbsp;·&nbsp;&nbsp;July 2026</span>',
+    'published footer status',
+)
+html = '\n'.join(line.rstrip() for line in html.splitlines()) + '\n'
+
+css = replace_if_present(
+    css,
+    '''  .research-interest-list { grid-template-columns: 1fr; gap: 10px; }
+  .influence-list { grid-template-columns: 1fr; justify-content: stretch; gap: 9px; }
+  .timeline-item { grid-template-columns: 1fr; gap: 4px; }''',
+    '''  .research-interest-list { grid-template-columns: 1fr; gap: 10px; }
+  .influence-list { grid-template-columns: 1fr; justify-content: stretch; gap: 9px; }
+  .influence-list li { white-space: normal; }
+  .section-body, .timeline-content, .contact-block { overflow-wrap: anywhere; }
+  .timeline-item { grid-template-columns: 1fr; gap: 4px; }''',
+    'mobile overflow protection',
 )
 
 notes = '''# Academic Website Redesign Notes
@@ -89,10 +142,32 @@ inventory = inventory.replace(
     1,
 )
 inventory = inventory.replace('| [CV] |', '| CV |').replace('| [LinkedIn] |', '| LinkedIn |').replace('| [ORCID] |', '| ORCID |').replace('| [GoogleScholar] |', '| GoogleScholar |').replace('| [SSRN] |', '| SSRN |').replace('| [ResearchGate] |', '| ResearchGate |')
+inventory = inventory.replace(
+    '| ‘When Polanyi Met Schumpeter: Social Trust and Entrepreneurship’ | https://mpra.ub.uni-muenchen.de/123894/ |',
+    '| ‘When Polanyi Met Schumpeter: Social Trust and Entrepreneurship’ | https://doi.org/10.31235/osf.io/nka6s_v3 |',
+)
+
+old_audit_end = '''        (
+            normalise_text("The Road Not Taken? Industrial Policy and Political Settlements in China and Indonesia 1990–2022"),
+            normalise_href("https://mpra.ub.uni-muenchen.de/id/eprint/122669"),
+        ),
+    }'''
+new_audit_end = '''        (
+            normalise_text("When Polanyi Met Schumpeter: Social Trust and Entrepreneurship"),
+            normalise_href("https://mpra.ub.uni-muenchen.de/123894/"),
+        ),
+        (
+            normalise_text("The Road Not Taken? Industrial Policy and Political Settlements in China and Indonesia 1990–2022"),
+            normalise_href("https://mpra.ub.uni-muenchen.de/id/eprint/122669"),
+        ),
+    }'''
+audit = replace_if_present(audit, old_audit_end, new_audit_end, 'approved Polanyi link replacement')
 
 index_path.write_text(html, encoding='utf-8')
+css_path.write_text(css, encoding='utf-8')
 notes_path.write_text(notes, encoding='utf-8')
 inventory_path.write_text(inventory.rstrip() + '\n', encoding='utf-8')
+audit_path.write_text(audit, encoding='utf-8')
 
 for stale in [
     '.github/workflows/apply-about-text.yml',
@@ -102,5 +177,7 @@ for stale in [
     'scripts/apply_about_text.py',
     'scripts/apply_key_modules_layout.py',
     'scripts/apply_typography_polish.py',
+    'audit-trigger.txt',
+    'audit-run.txt',
 ]:
     Path(stale).unlink(missing_ok=True)
