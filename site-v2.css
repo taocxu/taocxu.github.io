@@ -17,7 +17,7 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--ink);
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Aptos, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 17px;
   line-height: 1.68;
   text-rendering: optimizeLegibility;
@@ -48,7 +48,7 @@ img { display: block; max-width: 100%; }
 
 .site-name {
   color: var(--ink);
- font-family: "Palatino Linotype", Palatino, Georgia, serif;
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.005em;
@@ -180,7 +180,7 @@ main { display: block; }
 .section-label {
   margin: 0;
   color: #303134;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
   font-size: 1.42rem;
   font-weight: 600;
   letter-spacing: -0.015em;

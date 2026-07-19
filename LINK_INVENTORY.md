@@ -37,7 +37,7 @@ This file records the link text-to-destination relationships governing the redes
 | UCLA | https://www.ucla.edu |
 | University of Saint Joseph | https://www.usj.edu.mo/en/ |
 | [Certificate-Excellent A] | RoP&Transcript.pdf |
-| Economic and Mathematical Modelling | https://raw.githack.com/taocxu/taocxu.github.io/feature/google-sites-v2/CertificateMMCM.pdf |
+| Economic and Mathematical Modelling | CertificateMMCM.pdf |
 | Edinburgh CAS, Landlord State and Precarious Urban Agriculture in Accra | https://www.sps.ed.ac.uk/news-events/event/when-state-your-landlord-precarity-urban-agriculture-accra |
 | Edinburgh CAS, Political Economy of Extractivist Development in Ghana | https://www.sps.ed.ac.uk/news-events/event/political-economy-extractivist-development-ghana |
 | Edinburgh CAS, Global Politics of African Identity: Pan-Africanism & Afropolitanism | https://www.sps.ed.ac.uk/news-events/event/global-politics-african-identity-pan-africanism-and-challenge-afropolitanism |
@@ -93,7 +93,7 @@ This file records the link text-to-destination relationships governing the redes
 The July 2026 refinement explicitly replaced three legacy mappings:
 
 1. The former obfuscated address `tao.clovis.xu[at]outlook[dot]com` linked to Outlook was replaced by the current plain-text obfuscated address `tao.louie.xu[at]outlook[dot]com`; the hero `[Email]` button now scrolls to Contact.
-2. `“MathorCup” Mathematical Contest in Modelling` linked to the local certificate was replaced by `Economic and Mathematical Modelling` linked to the branch preview certificate URL.
+2. `“MathorCup” Mathematical Contest in Modelling` linked to the local certificate was replaced by `Economic and Mathematical Modelling` linked to the local certificate file.
 3. Footer text `Tao Xu` linked to the former website URL was replaced by `Tao Louie` linked to the GitHub profile.
 
 ## Link-preservation rule
