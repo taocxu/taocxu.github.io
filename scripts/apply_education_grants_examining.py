@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 
+# One-shot update for the current owner-approved education, grants, and examining copy.
 
 def replace_once(text: str, old: str, new: str, label: str) -> str:
     count = text.count(old)
