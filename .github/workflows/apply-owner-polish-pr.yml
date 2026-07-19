@@ -1,0 +1,42 @@
+name: Apply owner polish
+
+on:
+  pull_request:
+    branches:
+      - gh-pages
+    paths:
+      - scripts/apply_layout_and_content_polish.py
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.head_ref == 'feature/google-sites-v2'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out development branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/google-sites-v2
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Apply requested changes
+        run: python scripts/apply_layout_and_content_polish.py
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html site-v2.css LINK_INVENTORY.md scripts/audit_links.py
+          git commit -m "Apply final owner content and layout refinements"
+          git push origin HEAD:feature/google-sites-v2
