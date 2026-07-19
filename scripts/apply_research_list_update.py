@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 
+# One-shot update for the owner-approved research-interest wording and order.
 path = Path("index.html")
 html = path.read_text(encoding="utf-8")
 
