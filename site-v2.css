@@ -48,7 +48,7 @@ img { display: block; max-width: 100%; }
 
 .site-name {
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+ font-family: "Palatino Linotype", Palatino, Georgia, serif;
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.005em;
@@ -116,7 +116,7 @@ img { display: block; max-width: 100%; }
 .hero h1 {
   margin: 0;
   color: #252525;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
   font-size: clamp(2.5rem, 5.5vw, 4.7rem);
   font-weight: 400;
   letter-spacing: -0.035em;
