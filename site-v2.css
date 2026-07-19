@@ -113,6 +113,9 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
 }
 
+.eyebrow a { color: inherit; text-decoration: none; }
+.eyebrow a:hover, .eyebrow a:focus-visible { text-decoration: underline; }
+
 .hero h1 {
   margin: 0;
   color: #252525;

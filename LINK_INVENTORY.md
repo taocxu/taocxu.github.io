@@ -8,13 +8,13 @@ This file records the link text-to-destination relationships governing the redes
 |---|---|---|
 | Graduate School of Social and Political Science | https://www.sps.ed.ac.uk/ | Preserved |
 | The University of Edinburgh | https://www.ed.ac.uk/ | Preserved |
-| [CV] | CV.pdf | Preserved |
+| [CV] | https://drive.google.com/file/d/1KK9XKIFsuQbmF-dt_7UL8yj2v2Q2wZtI/view?usp=sharing | Owner-approved replacement for the former local PDF link |
 | [LinkedIn] | https://www.linkedin.com/in/tao-c-xu | Preserved beside other profile links |
 | [ORCID] | https://orcid.org/0000-0003-0510-3343 | Preserved beside other profile links |
-| [Google Scholar] | https://scholar.google.com/citations?user=KSSSjNQAAAAJ | Added |
+| [Google Scholar] | https://scholar.google.com/citations?user=KSSSjNQAAAAJ&hl=en | Added |
 | [SSRN] | https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=6287434 | Added |
 | [ResearchGate] | https://www.researchgate.net/profile/Tao-Xu-168?ev=hdr_xprf | Added |
-| [Email] | #contact | Replaced direct email action with an in-page link to the obfuscated address |
+| tao.louie.xu[at]outlook[dot]com | mailto:tao.louie.xu+webpage@gmail.com | Displayed in the hero and Contact section; the former hero [Email] button was removed |
 | Tao Louie | https://github.com/taocxu | Owner-approved replacement for the former footer link |
 
 ## Education and academic training
@@ -90,9 +90,9 @@ This file records the link text-to-destination relationships governing the redes
 
 ## Owner-approved replacements
 
-The July 2026 refinements explicitly replaced nine legacy mappings:
+The July 2026 refinements explicitly replaced ten legacy mappings:
 
-1. The former obfuscated address `tao.clovis.xu[at]outlook[dot]com` linked to Outlook was replaced by the current plain-text obfuscated address `tao.louie.xu[at]outlook[dot]com`; the hero `[Email]` button now scrolls to Contact.
+1. The former obfuscated address `tao.clovis.xu[at]outlook[dot]com` linked to Outlook was replaced by `tao.louie.xu[at]outlook[dot]com`, displayed in the hero and Contact section and linked to `mailto:tao.louie.xu+webpage@gmail.com`; the redundant hero `[Email]` button was removed.
 2. `“MathorCup” Mathematical Contest in Modelling` linked to the local certificate was replaced by `Economic and Mathematical Modelling` linked to the same local certificate file.
 3. Footer text `Tao Xu` linked to the former website URL was replaced by `Tao Louie` linked to the GitHub profile.
 4. `Dr Li Liu` was shortened to `Dr Liu` while retaining the same Fudan profile destination.
@@ -101,6 +101,7 @@ The July 2026 refinements explicitly replaced nine legacy mappings:
 7. `Prof Guanyi Li` was changed to `Dr Li` while retaining the same NUFE profile destination.
 8. `Deputy Mayor of Lhasa and Permanent Secretary of Tibet Chunlai Zhou` was shortened to `Deputy Mayor of Lhasa and Permanent Secretary of Tibet Zhou` while retaining the same destination.
 9. `Prof Yingbao Huo` was shortened to `Prof Huo` while retaining the same NUFE profile destination.
+10. `[CV]` was changed from the local `CV.pdf` destination to the owner-specified Google Drive file.
 
 ## Link-preservation rule
 
