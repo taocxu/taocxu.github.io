@@ -304,6 +304,45 @@ main { display: block; }
 .timeline-content h3 { margin: 0 0 3px; font-size: 1rem; }
 .timeline-content p { margin: 0; color: #3c4043; }
 
+.key-modules {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 10px 14px;
+  align-items: start;
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7ea;
+}
+
+.key-modules-label {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.key-module-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.key-module-list li {
+  max-width: 100%;
+  padding: 5px 9px;
+  border: 1px solid #dfe3e7;
+  border-radius: 3px;
+  background: #f7f8f9;
+  color: #3c4043;
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
 #projects .timeline-content p,
 #experience .timeline-content p {
   font-size: 0.96rem;
@@ -413,6 +452,9 @@ main { display: block; }
   .research-interest-list { grid-template-columns: 1fr; gap: 10px; }
   .influence-list { grid-template-columns: 1fr; justify-content: stretch; gap: 9px; }
   .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+  .key-modules { grid-template-columns: 1fr; gap: 7px; }
+  .key-module-list { gap: 6px; }
+  .key-module-list li { font-size: 0.82rem; }
   .footer-shell { flex-direction: column; }
 }
 
