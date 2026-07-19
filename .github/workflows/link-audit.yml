@@ -25,5 +25,25 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Audit legacy links and local targets
-        run: python scripts/audit_links.py
+      - name: Generate audit report
+        id: audit
+        shell: bash
+        run: |
+          set +e
+          python scripts/audit_links.py 2>&1 | tee audit-report.txt
+          echo "exit_code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: legacy-hyperlink-audit
+          path: audit-report.txt
+          if-no-files-found: error
+
+      - name: Enforce audit result
+        if: steps.audit.outputs.exit_code != '0'
+        run: |
+          cat audit-report.txt
+          exit 1
