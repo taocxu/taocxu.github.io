@@ -1,0 +1,32 @@
+name: Clean final release tree
+
+on:
+  push:
+    branches:
+      - feature/google-sites-v2
+    paths:
+      - scripts/clean_release_tree.py
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out development branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/google-sites-v2
+          fetch-depth: 0
+
+      - name: Clean temporary audit files
+        run: python scripts/clean_release_tree.py
+
+      - name: Commit clean release tree
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Clean final public release tree"
+          git push origin HEAD:feature/google-sites-v2
