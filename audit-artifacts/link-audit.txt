@@ -2,9 +2,6 @@ Legacy hyperlink preservation audit
 Baseline links found:       55
 Current links found:        77
 Preserved mappings:         29
-Owner-approved replacements:       25
+Owner-approved replacements:       26
 
-Missing legacy destinations:
-- '"When Polanyi Met Schumpeter: Social Trust and Entrepreneurship,"' -> https://mpra.ub.uni-muenchen.de/123894/
-
-FAILED: 1 issue(s) require review.
+PASSED: all non-exempt legacy mappings and local targets are intact.

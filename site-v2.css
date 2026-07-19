@@ -502,6 +502,8 @@ main { display: block; }
   .content-section { padding: 44px 0; }
   .research-interest-list { grid-template-columns: 1fr; gap: 10px; }
   .influence-list { grid-template-columns: 1fr; justify-content: stretch; gap: 9px; }
+  .influence-list li { white-space: normal; }
+  .section-body, .timeline-content, .contact-block { overflow-wrap: anywhere; }
   .timeline-item { grid-template-columns: 1fr; gap: 4px; }
   .key-modules { grid-template-columns: 1fr; gap: 7px; }
   .key-module-list { gap: 6px; }

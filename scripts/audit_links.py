@@ -254,6 +254,10 @@ def approved_legacy_changes() -> set[tuple[str, str]]:
             normalise_href("https://www.sps.ed.ac.uk/news-events/event/global-politics-african-identity-pan-africanism-and-challenge-afropolitanism"),
         ),
         (
+            normalise_text("When Polanyi Met Schumpeter: Social Trust and Entrepreneurship"),
+            normalise_href("https://mpra.ub.uni-muenchen.de/123894/"),
+        ),
+        (
             normalise_text("The Road Not Taken? Industrial Policy and Political Settlements in China and Indonesia 1990–2022"),
             normalise_href("https://mpra.ub.uni-muenchen.de/id/eprint/122669"),
         ),
