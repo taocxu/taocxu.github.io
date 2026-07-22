@@ -1,0 +1,37 @@
+name: Apply final balanced influences layout
+
+on:
+  push:
+    branches:
+      - gh-pages
+    paths:
+      - scripts/apply_balanced_influences_final.py
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out published branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Apply layout update
+        run: python scripts/apply_balanced_influences_final.py
+
+      - name: Commit published update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Balance influences columns"
+          git push origin HEAD:gh-pages
