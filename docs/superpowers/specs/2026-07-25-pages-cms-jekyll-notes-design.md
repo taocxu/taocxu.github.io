@@ -31,6 +31,14 @@ The root `.pages.yml` exposes `_notes/` as one collection. It permits create, re
 
 The rich-text editor does not configure media uploads in this first version. Images can be added later through ordinary Markdown or a separate media design.
 
+## Navigation
+
+The homepage navigation order is:
+
+`Home · Research · Publications · Projects · Notes · Grants · CV`
+
+`Notes` scrolls to the homepage Notes section. The independent archive is reached from a single note through `← Back to Blog & Research Notes`.
+
 ## Jekyll
 
 `_config.yml` defines a `notes` collection with rendered output and stable `/notes/<slug>/` URLs. Front-matter defaults provide the `note` layout and unpublished default.
@@ -63,5 +71,6 @@ A single `_notes/infrastructure-test.md` document is included with `published: f
 - The hidden draft remains unpublished.
 - The archive lists only published notes.
 - The homepage include limits output to three published notes.
+- `Notes` appears before `Grants` throughout preview and production templates.
 - Note pages match the existing academic visual language.
 - Existing published files and `gh-pages` remain untouched.
