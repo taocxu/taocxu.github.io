@@ -62,6 +62,23 @@
   </footer>
 
   <script>
+    function waitForMathJax(timeoutMs) {
+      const startedAt = Date.now();
+      return new Promise(function (resolve, reject) {
+        (function check() {
+          if (window.MathJax && window.MathJax.typesetPromise) {
+            resolve(window.MathJax);
+            return;
+          }
+          if (Date.now() - startedAt >= timeoutMs) {
+            reject(new Error('MathJax did not finish loading.'));
+            return;
+          }
+          window.setTimeout(check, 50);
+        })();
+      });
+    }
+
     (async function loadNote() {
       const allowed = new Set([
         'when-ideas-enter-political-economy',
@@ -117,11 +134,11 @@
         const date = meta.date || '';
         const formatted = date ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`)) : '';
         document.getElementById('note-byline').innerHTML = `<time datetime="${date}">${formatted}</time> ${meta.author || 'Tao Louie Xu'}`;
-        document.getElementById('note-content').innerHTML = rendered;
+        const noteContent = document.getElementById('note-content');
+        noteContent.innerHTML = rendered;
 
-        if (window.MathJax && window.MathJax.typesetPromise) {
-          await window.MathJax.typesetPromise([document.getElementById('note-content')]);
-        }
+        const mathJax = await waitForMathJax(10000);
+        await mathJax.typesetPromise([noteContent]);
       } catch (error) {
         document.getElementById('note-title').textContent = 'Preview could not be loaded';
         document.getElementById('note-content').textContent = error.message;
