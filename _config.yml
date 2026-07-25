@@ -1,1 +1,15 @@
 theme: jekyll-theme-minimal
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+    sort_by: date
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+      published: false

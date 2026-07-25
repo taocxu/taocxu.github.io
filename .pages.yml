@@ -1,0 +1,66 @@
+settings:
+  hide: true
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "notes: create {filename} via Pages CMS"
+      update: "notes: update {filename} via Pages CMS"
+      delete: "notes: delete {filename} via Pages CMS"
+      rename: "notes: rename {oldFilename} to {newFilename} via Pages CMS"
+
+content:
+  - name: notes
+    label: Blog & Research Notes
+    type: collection
+    path: _notes
+    format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    subfolders: false
+    operations:
+      create: true
+      rename: true
+      delete: true
+    view:
+      fields: [title, subtitle, published, date]
+      primary: title
+      sort: [date, title]
+      search: [title, subtitle, body]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        options:
+          maxlength: 180
+      - name: subtitle
+        label: Subtitle
+        type: string
+        required: false
+        options:
+          maxlength: 180
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          time: false
+          format: yyyy-MM-dd
+      - name: published
+        label: Published
+        type: boolean
+        default: false
+        description: "Keep this off while drafting. Turn it on only when the note is ready to appear on the website."
+      - name: body
+        label: Note
+        type: rich-text
+        options:
+          format: markdown
+          switcher: true
+          media: false
