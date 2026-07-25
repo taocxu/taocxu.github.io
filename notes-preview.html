@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Blog &amp; Research Notes Preview | Tao Louie Lunhe Xu</title>
+</head>
+<body>
+  <main style="max-width: 760px; margin: 80px auto; padding: 0 24px; font-family: Arial, sans-serif; line-height: 1.6;">
+    <p>Loading branch preview…</p>
+  </main>
+
+  <script>
+    (async function renderPreview() {
+      try {
+        const response = await fetch('index.html', { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error(`Unable to load index.html (${response.status})`);
+        }
+
+        const source = await response.text();
+        const parsed = new DOMParser().parseFromString(source, 'text/html');
+
+        parsed.title = 'Blog & Research Notes Preview | Tao Louie Lunhe Xu';
+        const robots = parsed.createElement('meta');
+        robots.name = 'robots';
+        robots.content = 'noindex, nofollow';
+        parsed.head.appendChild(robots);
+
+        const previewStyles = parsed.createElement('link');
+        previewStyles.rel = 'stylesheet';
+        previewStyles.href = 'notes-preview.css';
+        parsed.head.appendChild(previewStyles);
+
+        const navigation = parsed.querySelector('.site-nav');
+        const grantsLink = navigation && navigation.querySelector('a[href="#grants"]');
+        if (!navigation || !grantsLink) {
+          throw new Error('Expected homepage navigation was not found.');
+        }
+
+        const notesLink = parsed.createElement('a');
+        notesLink.href = 'notes/index-preview.html';
+        notesLink.textContent = 'Notes';
+        grantsLink.insertAdjacentElement('afterend', notesLink);
+
+        const reportsSection = parsed.querySelector('#reports');
+        if (!reportsSection) {
+          throw new Error('Expected Reports section was not found.');
+        }
+
+        const notesSection = parsed.createElement('section');
+        notesSection.className = 'content-section';
+        notesSection.id = 'notes-preview-section';
+        notesSection.innerHTML = `
+          <div class="section-heading">
+            <h2 class="section-label">BLOG &amp; RESEARCH NOTES</h2>
+            <div class="section-body">
+              <div class="notes-list">
+                <article class="note-preview">
+                  <time class="note-date" datetime="2026-07-24">24 July 2026</time>
+                  <div class="note-preview-row">
+                    <h3 class="note-preview-title"><a href="notes/example-note-preview.html">Hirschman’s Hiding Hand and China’s Revolutionary Optimism</a></h3>
+                    <a class="note-read-more" href="notes/example-note-preview.html">Read note →</a>
+                  </div>
+                </article>
+                <article class="note-preview">
+                  <time class="note-date" datetime="2026-07-17">17 July 2026</time>
+                  <div class="note-preview-row">
+                    <h3 class="note-preview-title"><a href="notes/example-note-preview.html">Industrial Policy, Productive Capabilities, and the Organisation of Learning</a></h3>
+                    <a class="note-read-more" href="notes/example-note-preview.html">Read note →</a>
+                  </div>
+                </article>
+                <article class="note-preview">
+                  <time class="note-date" datetime="2026-07-10">10 July 2026</time>
+                  <div class="note-preview-row">
+                    <h3 class="note-preview-title"><a href="notes/example-note-preview.html">Political Settlements, Institutional Change, and the Distribution of Rents</a></h3>
+                    <a class="note-read-more" href="notes/example-note-preview.html">Read note →</a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>`;
+
+        reportsSection.insertAdjacentElement('afterend', notesSection);
+
+        document.documentElement.lang = parsed.documentElement.lang || 'en';
+        document.head.innerHTML = parsed.head.innerHTML;
+        document.body.innerHTML = parsed.body.innerHTML;
+      } catch (error) {
+        document.body.innerHTML = `
+          <main style="max-width: 760px; margin: 80px auto; padding: 0 24px; font-family: Arial, sans-serif; line-height: 1.6;">
+            <h1>Preview could not be loaded</h1>
+            <p>${error.message}</p>
+          </main>`;
+      }
+    })();
+  </script>
+</body>
+</html>
