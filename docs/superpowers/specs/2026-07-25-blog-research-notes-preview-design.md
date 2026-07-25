@@ -10,9 +10,9 @@ The published `gh-pages` branch must remain unchanged until at least one substan
 
 ## Navigation
 
-Add `Notes` as a seventh top-navigation label after `Grants` and before `CV`:
+Add `Notes` as a seventh top-navigation label after `Projects` and before `Grants`:
 
-`Home · Research · Publications · Projects · Grants · Notes · CV`
+`Home · Research · Publications · Projects · Notes · Grants · CV`
 
 On the homepage preview, `Notes` behaves like the other navigation labels and scrolls to the `BLOG & RESEARCH NOTES` section on the same page. It does not link directly to the independent notes archive.
 
@@ -63,7 +63,7 @@ This architecture leaves existing published files untouched and makes rollback e
 
 - The published `gh-pages` branch remains unchanged by this feature branch.
 - The preview homepage shows three balanced note items.
-- `Notes` is the seventh navigation item and scrolls to the homepage notes section.
+- `Notes` is the seventh navigation item, appears before `Grants`, and scrolls to the homepage notes section.
 - Homepage and archive items contain only a date and linked title.
 - The single-note return link opens the complete archive.
 - Mobile layouts avoid horizontal overflow.
