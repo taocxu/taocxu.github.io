@@ -26,10 +26,7 @@
 }
 
 .note-preview-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 28px;
+  display: block;
 }
 
 .note-preview-title {
@@ -46,22 +43,9 @@
   font-weight: 700;
 }
 
-.note-read-more {
-  flex: 0 0 auto;
-  white-space: nowrap;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
 .notes-page .site-nav a:first-child {
   background: transparent;
   color: #3c4043;
-}
-
-.notes-page .site-nav a[aria-current="page"] {
-  background: var(--accent);
-  color: #ffffff;
-  text-decoration: none;
 }
 
 .note-article {
@@ -96,15 +80,6 @@
 }
 
 @media (max-width: 680px) {
-  .note-preview-row {
-    display: block;
-  }
-
-  .note-read-more {
-    display: inline-block;
-    margin-top: 7px;
-  }
-
   .note-article {
     max-width: 100%;
   }
