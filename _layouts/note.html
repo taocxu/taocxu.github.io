@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ page.title | escape }} — a research note by Tao Louie Lunhe Xu.">
-  <title>{{ page.title | escape }} | Tao Louie Lunhe Xu</title>
+  <meta name="description" content="{{ page.title | escape }}{% if page.subtitle %}: {{ page.subtitle | escape }}{% endif %} — a research note by Tao Louie Lunhe Xu.">
+  <title>{{ page.title | escape }}{% if page.subtitle %}: {{ page.subtitle | escape }}{% endif %} | Tao Louie Lunhe Xu</title>
   <link rel="stylesheet" href="{{ '/site-v2.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/notes.css' | relative_url }}">
 </head>
@@ -32,6 +32,9 @@
         <h2 class="section-label">BLOG &amp; RESEARCH NOTES</h2>
         <article class="section-body note-article">
           <h1>{{ page.title | escape }}</h1>
+          {% if page.subtitle %}
+            <p class="note-subtitle">{{ page.subtitle | escape }}</p>
+          {% endif %}
           <p class="note-date"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%-d %B %Y' }}</time>{% if page.author %} {{ page.author | escape }}{% endif %}</p>
           <div class="note-content">
             {{ content }}
