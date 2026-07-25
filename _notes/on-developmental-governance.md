@@ -42,4 +42,4 @@ Therefore, **1)** where states employ formally different policy instruments yet 
 
 **3)** What I mean when I say discipline? Performance conditions and exit rules are substantial only when the state is equipped with the capabilities to suspend and where justifiable withdraw policy-rents, withstanding the discontent from the beneficiary organisations of established interest. Remember ‘*embedded autonomy*’? Clientelism studies also remind us that governments in some global South economies struggle to withstand such discontent, across both more and less democratic systems.
 
-**Examine what a policy package or one measure actually does.** Use this framework, it will be more explicit I wish.
+Examine what a policy package or one measure actually does. Use this framework, it will be more explicit I wish.
