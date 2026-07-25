@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Blog &amp; Research Notes Preview | Tao Louie Lunhe Xu</title>
+</head>
+<body>
+  <main style="max-width: 760px; margin: 80px auto; padding: 0 24px; font-family: Arial, sans-serif; line-height: 1.6;">
+    <p>Loading branch preview…</p>
+  </main>
+
+  <script>
+    (async function renderPreview() {
+      try {
+        const requestedHash = window.location.hash;
+        const response = await fetch('index.html', { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error(`Unable to load index.html (${response.status})`);
+        }
+
+        const source = await response.text();
+        const parsed = new DOMParser().parseFromString(source, 'text/html');
+
+        parsed.title = 'Blog & Research Notes Preview | Tao Louie Lunhe Xu';
+        const robots = parsed.createElement('meta');
+        robots.name = 'robots';
+        robots.content = 'noindex, nofollow';
+        parsed.head.appendChild(robots);
+
+        const baseNotesStyle = parsed.querySelector('link[href="notes.css"]');
+        if (baseNotesStyle) baseNotesStyle.remove();
+
+        const previewStyles = parsed.createElement('link');
+        previewStyles.rel = 'stylesheet';
+        previewStyles.href = 'notes-preview.css';
+        parsed.head.appendChild(previewStyles);
+
+        const existingNotes = parsed.querySelector('#notes');
+        if (existingNotes) existingNotes.remove();
+
+        const notesLink = parsed.querySelector('.site-nav a[href="#notes"]');
+        if (notesLink) notesLink.href = '#notes-preview-section';
+
+        const reportsSection = parsed.querySelector('#reports');
+        if (!reportsSection) {
+          throw new Error('Expected Reports section was not found.');
+        }
+
+        const notesSection = parsed.createElement('section');
+        notesSection.className = 'content-section';
+        notesSection.id = 'notes-preview-section';
+        notesSection.innerHTML = `
+          <div class="section-heading">
+            <h2 class="section-label">BLOG &amp; RESEARCH NOTES</h2>
+            <div class="section-body">
+              <div class="notes-list">
+                <article class="note-preview">
+                  <time class="note-date" datetime="2026-07-26">26 July 2026</time>
+                  <h3 class="note-preview-title"><a href="notes/when-ideas-enter-political-economy-preview.html">When Ideas Enter Political Economy: Reading The Political Economy of Ideas by Mukand and Rodrik</a></h3>
+                </article>
+                <article class="note-preview">
+                  <time class="note-date" datetime="2026-06-02">2 June 2026</time>
+                  <h3 class="note-preview-title"><a href="notes/on-developmental-governance/index.html">On Developmental Governance, What Digital-Asset Regulation Taught Us: Comparative Framework of Activities, Functions, and Risks</a></h3>
+                </article>
+                <article class="note-preview">
+                  <time class="note-date" datetime="2026-05-22">22 May 2026</time>
+                  <h3 class="note-preview-title"><a href="notes/infrastructure-power-asymmetry-global-supply-chains-preview.html">Infrastructure and the Power Asymmetry in Global Supply Chains</a></h3>
+                </article>
+              </div>
+            </div>
+          </div>`;
+
+        reportsSection.insertAdjacentElement('afterend', notesSection);
+
+        document.documentElement.lang = parsed.documentElement.lang || 'en';
+        document.head.innerHTML = parsed.head.innerHTML;
+        document.body.innerHTML = parsed.body.innerHTML;
+
+        if (requestedHash) {
+          requestAnimationFrame(function scrollToRequestedSection() {
+            const target = document.querySelector(requestedHash);
+            if (target) target.scrollIntoView();
+          });
+        }
+      } catch (error) {
+        document.body.innerHTML = `
+          <main style="max-width: 760px; margin: 80px auto; padding: 0 24px; font-family: Arial, sans-serif; line-height: 1.6;">
+            <h1>Preview could not be loaded</h1>
+            <p>${error.message}</p>
+          </main>`;
+      }
+    })();
+  </script>
+</body>
+</html>
