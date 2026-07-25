@@ -1,0 +1,18 @@
+{% assign published_notes = site.notes | where_exp: "note", "note.published != false" | sort: "date" | reverse %}
+{% if published_notes.size > 0 %}
+<section class="content-section" id="notes">
+  <div class="section-heading">
+    <h2 class="section-label">BLOG &amp; RESEARCH NOTES</h2>
+    <div class="section-body">
+      <div class="notes-list">
+        {% for note in published_notes limit: 3 %}
+          <article class="note-preview">
+            <time class="note-date" datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: '%-d %B %Y' }}</time>
+            <h3 class="note-preview-title"><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></h3>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
