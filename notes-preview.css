@@ -1,0 +1,111 @@
+.notes-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.note-preview {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.note-preview:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.note-date {
+  display: block;
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 0.83rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+.note-preview-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.note-preview-title {
+  min-width: 0;
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.48;
+}
+
+.note-preview-title a {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.note-read-more {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.notes-page .site-nav a:first-child {
+  background: transparent;
+  color: #3c4043;
+}
+
+.notes-page .site-nav a[aria-current="page"] {
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.note-article {
+  max-width: 760px;
+}
+
+.note-article h1 {
+  margin: 0 0 10px;
+  color: #252525;
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.14;
+}
+
+.note-article .note-date {
+  margin-bottom: 28px;
+}
+
+.note-article p {
+  margin: 0 0 1.15em;
+}
+
+.note-back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+@media (max-width: 680px) {
+  .note-preview-row {
+    display: block;
+  }
+
+  .note-read-more {
+    display: inline-block;
+    margin-top: 7px;
+  }
+
+  .note-article {
+    max-width: 100%;
+  }
+}
