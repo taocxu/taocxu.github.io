@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Six Notes Preview | Tao Louie Lunhe Xu</title>
+</head>
+<body>
+  <main style="max-width:760px;margin:80px auto;padding:0 24px;font-family:Arial,sans-serif;line-height:1.6">
+    <p>Loading six-note preview…</p>
+  </main>
+  <script>
+  (async function () {
+    try {
+      const requestedHash = location.hash;
+      const response = await fetch('index.html', {cache:'no-store'});
+      if (!response.ok) throw new Error('Unable to load index.html (' + response.status + ')');
+      const source = await response.text();
+      const parsed = new DOMParser().parseFromString(source, 'text/html');
+      parsed.title = 'Six Notes Preview | Tao Louie Lunhe Xu';
+      let robots = parsed.querySelector('meta[name="robots"]');
+      if (!robots) {
+        robots = parsed.createElement('meta');
+        robots.name = 'robots';
+        parsed.head.appendChild(robots);
+      }
+      robots.content = 'noindex, nofollow';
+      const notes = parsed.querySelector('#notes .notes-list');
+      if (!notes) throw new Error('The homepage Notes section was not found.');
+      notes.innerHTML = `
+        <article class="note-preview">
+          <time class="note-date" datetime="2026-06-02">2 June 2026</time>
+          <h3 class="note-preview-title"><a href="notes/on-developmental-governance/">On Developmental Governance, What Digital-Asset Regulation Taught Us: Comparative Framework of Activities, Functions, and Risks</a></h3>
+        </article>
+        <article class="note-preview">
+          <time class="note-date" datetime="2026-05-22">22 May 2026</time>
+          <h3 class="note-preview-title"><a href="notes/infrastructure-power-asymmetry-global-supply-chains-preview.html">Infrastructure and the Power Asymmetry in Global Supply Chains</a></h3>
+        </article>
+        <article class="note-preview">
+          <time class="note-date" datetime="2026-04-01">1 April 2026</time>
+          <h3 class="note-preview-title"><a href="notes/infrastructure-public-good-capitalist-power-preview.html">Infrastructure: A Public Good or Capitalist Power?</a></h3>
+        </article>`;
+      document.documentElement.lang = parsed.documentElement.lang || 'en';
+      document.head.innerHTML = parsed.head.innerHTML;
+      document.body.innerHTML = parsed.body.innerHTML;
+      if (requestedHash) requestAnimationFrame(() => {
+        const target = document.querySelector(requestedHash);
+        if (target) target.scrollIntoView();
+      });
+    } catch (error) {
+      document.body.innerHTML = '<main style="max-width:760px;margin:80px auto;padding:0 24px;font-family:Arial,sans-serif;line-height:1.6"><h1>Preview could not be loaded</h1><p>' + error.message + '</p></main>';
+    }
+  })();
+  </script>
+</body>
+</html>
