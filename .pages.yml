@@ -25,10 +25,10 @@ content:
       rename: true
       delete: true
     view:
-      fields: [title, published, date]
+      fields: [title, subtitle, published, date]
       primary: title
       sort: [date, title]
-      search: [title, body]
+      search: [title, subtitle, body]
       default:
         sort: date
         order: desc
@@ -37,6 +37,12 @@ content:
         label: Title
         type: string
         required: true
+        options:
+          maxlength: 180
+      - name: subtitle
+        label: Subtitle
+        type: string
+        required: false
         options:
           maxlength: 180
       - name: date
