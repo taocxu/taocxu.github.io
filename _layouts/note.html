@@ -32,7 +32,7 @@
         <h2 class="section-label">BLOG &amp; RESEARCH NOTES</h2>
         <article class="section-body note-article">
           <h1>{{ page.title | escape }}</h1>
-          <time class="note-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%-d %B %Y' }}</time>
+          <p class="note-date"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%-d %B %Y' }}</time>{% if page.author %} {{ page.author | escape }}{% endif %}</p>
           <div class="note-content">
             {{ content }}
           </div>
