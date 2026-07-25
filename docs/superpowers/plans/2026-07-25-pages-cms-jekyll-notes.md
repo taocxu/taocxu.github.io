@@ -16,6 +16,7 @@
 - No categories, tags, summaries, images, comments, reading counts, or mandatory References field.
 - Preserve unmanaged front-matter keys when Pages CMS saves a file.
 - Keep the existing approved visual language.
+- Use navigation order `Home · Research · Publications · Projects · Notes · Grants · CV`.
 
 ---
 
@@ -28,12 +29,12 @@
 - Consumes: Markdown files in `_notes/`.
 - Produces: browser fields `title`, `date`, `published`, and `body`; create, rename, edit, and delete operations.
 
-- [ ] Create a YAML-frontmatter collection at `_notes/`.
-- [ ] Make the filename editable only when creating a note.
-- [ ] Set `published` to default false.
-- [ ] Enable merge mode to preserve unmanaged keys.
-- [ ] Disable rich-text media uploads in this version.
-- [ ] Validate YAML parsing.
+- [x] Create a YAML-frontmatter collection at `_notes/`.
+- [x] Make the filename editable only when creating a note.
+- [x] Set `published` to default false.
+- [x] Enable merge mode to preserve unmanaged keys.
+- [x] Disable rich-text media uploads in this version.
+- [x] Validate YAML parsing.
 
 ### Task 2: Configure the Jekyll collection
 
@@ -45,11 +46,11 @@
 - Consumes: `_notes/*.md` with front matter.
 - Produces: rendered note URLs at `/notes/:name/` for published documents.
 
-- [ ] Add the output-enabled `notes` collection.
-- [ ] Add the `/notes/:name/` permalink.
-- [ ] Add front-matter defaults for `layout: note` and `published: false`.
-- [ ] Add one unpublished infrastructure fixture.
-- [ ] Validate both YAML files.
+- [x] Add the output-enabled `notes` collection.
+- [x] Add the `/notes/:name/` permalink.
+- [x] Add front-matter defaults for `layout: note` and `published: false`.
+- [x] Add one unpublished infrastructure fixture.
+- [x] Validate both YAML files.
 
 ### Task 3: Add the production note layout and styles
 
@@ -61,11 +62,11 @@
 - Consumes: `page.title`, `page.date`, and rendered `content`.
 - Produces: a standalone note page with site navigation and archive return link.
 
-- [ ] Reuse the current site header, navigation, content width, typography, and footer.
-- [ ] Point the top `Notes` link to the homepage notes anchor.
-- [ ] Add `← Back to Blog & Research Notes` linking to `/notes/`.
-- [ ] Keep the reading column at 760px maximum.
-- [ ] Add responsive article styling.
+- [x] Reuse the current site header, navigation, content width, typography, and footer.
+- [x] Put `Notes` before `Grants` and point it to the homepage notes anchor.
+- [x] Add `← Back to Blog & Research Notes` linking to `/notes/`.
+- [x] Keep the reading column at 760px maximum.
+- [x] Add responsive article styling.
 
 ### Task 4: Add dynamic archive and homepage include
 
@@ -77,11 +78,11 @@
 - Consumes: `site.notes`.
 - Produces: reverse-chronological archive and latest-three homepage fragment.
 
-- [ ] Filter out documents with `published: false`.
-- [ ] Sort published notes by date descending.
-- [ ] Use title-only links.
-- [ ] Limit the homepage fragment to three notes.
-- [ ] Avoid public placeholder or `Coming soon` text.
+- [x] Filter out documents with `published: false`.
+- [x] Sort published notes by date descending.
+- [x] Use title-only links.
+- [x] Limit the homepage fragment to three notes.
+- [x] Avoid public placeholder or `Coming soon` text.
 
 ### Task 5: Document mixed authoring workflows
 
@@ -92,11 +93,11 @@
 - Consumes: Pages CMS and direct Markdown workflows.
 - Produces: concise operating instructions and publication safeguards.
 
-- [ ] Explain selecting the repository and feature branch in Pages CMS.
-- [ ] Explain create, edit, publish, rename, and delete operations.
-- [ ] Document the direct Markdown schema.
-- [ ] State that `published: true` is the publication switch.
-- [ ] Explain that the unpublished infrastructure fixture can be deleted.
+- [x] Explain selecting the repository and feature branch in Pages CMS.
+- [x] Explain create, edit, publish, rename, and delete operations.
+- [x] Document the direct Markdown schema.
+- [x] State that `published: true` is the publication switch.
+- [x] Explain that the unpublished infrastructure fixture can be deleted.
 
 ### Task 6: Verify branch safety and configuration
 
@@ -107,8 +108,9 @@
 - Consumes: final feature branch.
 - Produces: evidence that configuration and branch isolation are intact.
 
-- [ ] Parse `.pages.yml`, `_config.yml`, and the fixture front matter as YAML.
-- [ ] Confirm `.pages.yml` contains merge mode and all four operations.
-- [ ] Confirm the archive and homepage include filter unpublished notes.
-- [ ] Confirm the homepage include contains `limit: 3`.
-- [ ] Compare the feature branch against `gh-pages` and verify no public-branch write occurred.
+- [x] Parse `.pages.yml`, `_config.yml`, and the fixture front matter as YAML.
+- [x] Confirm merge mode and create, rename, delete, and normal edit support.
+- [x] Confirm the archive and homepage include filter unpublished notes.
+- [x] Confirm the homepage include contains `limit: 3`.
+- [x] Confirm `Notes` appears before `Grants` throughout the preview and production templates.
+- [x] Compare the feature branch against `gh-pages` and verify no public-branch write occurred.
