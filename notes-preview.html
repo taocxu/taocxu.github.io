@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Six-Note Preview | Tao Louie Lunhe Xu</title>
+  <title>Seven-Note Preview | Tao Louie Lunhe Xu</title>
 </head>
 <body>
   <main style="max-width:760px;margin:80px auto;padding:0 24px;font-family:Arial,sans-serif;line-height:1.6;">
-    <p>Loading six-note preview…</p>
+    <p>Loading seven-note preview…</p>
   </main>
   <script>
     (async function renderPreview() {
@@ -18,14 +18,20 @@
         if (!response.ok) throw new Error(`Unable to load index.html (${response.status})`);
         const source = await response.text();
         const parsed = new DOMParser().parseFromString(source, 'text/html');
-        parsed.title = 'Six-Note Preview | Tao Louie Lunhe Xu';
+        parsed.title = 'Seven-Note Preview | Tao Louie Lunhe Xu';
         const robots = parsed.createElement('meta');
         robots.name = 'robots';
         robots.content = 'noindex, nofollow';
         parsed.head.appendChild(robots);
         const notesList = parsed.querySelector('#notes .notes-list');
         if (!notesList) throw new Error('Expected homepage Notes section was not found.');
+        notesList.classList.add('notes-list-scroll');
+        notesList.setAttribute('aria-label', 'Seven research notes; scroll to view all');
         notesList.innerHTML = `
+          <article class="note-preview">
+            <time class="note-date" datetime="2026-07-26">26 July 2026</time>
+            <h3 class="note-preview-title"><a href="notes/when-ideas-enter-political-economy/">When Ideas Enter Political Economy</a></h3>
+          </article>
           <article class="note-preview">
             <time class="note-date" datetime="2026-06-02">2 June 2026</time>
             <h3 class="note-preview-title"><a href="notes/on-developmental-governance/">On Developmental Governance, What Digital-Asset Regulation Taught Us: Comparative Framework of Activities, Functions, and Risks</a></h3>
@@ -37,6 +43,18 @@
           <article class="note-preview">
             <time class="note-date" datetime="2026-04-01">1 April 2026</time>
             <h3 class="note-preview-title"><a href="notes/infrastructure-public-good-capitalist-power/">Infrastructure: A Public Good or Capitalist Power?</a></h3>
+          </article>
+          <article class="note-preview">
+            <time class="note-date" datetime="2026-01-15">15 January 2026</time>
+            <h3 class="note-preview-title"><a href="notes/strategy-as-practice-approach/">Strategy as Practice Approach</a></h3>
+          </article>
+          <article class="note-preview">
+            <time class="note-date" datetime="2025-12-28">28 December 2025</time>
+            <h3 class="note-preview-title"><a href="notes/innovation-ecosystems/">Innovation Ecosystems: From Entrepreneurial Fanfare Back to Learning, Capabilities, and Structures</a></h3>
+          </article>
+          <article class="note-preview">
+            <time class="note-date" datetime="2025-12-12">12 December 2025</time>
+            <h3 class="note-preview-title"><a href="notes/entrepreneurial-ecosystems/">Entrepreneurial Ecosystems</a></h3>
           </article>`;
         document.documentElement.lang = parsed.documentElement.lang || 'en';
         document.head.innerHTML = parsed.head.innerHTML;
