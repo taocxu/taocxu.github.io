@@ -43,7 +43,7 @@
         const notesLink = parsed.createElement('a');
         notesLink.href = '#notes-preview-section';
         notesLink.textContent = 'Notes';
-        grantsLink.insertAdjacentElement('afterend', notesLink);
+        grantsLink.insertAdjacentElement('beforebegin', notesLink);
 
         const reportsSection = parsed.querySelector('#reports');
         if (!reportsSection) {
