@@ -14,7 +14,9 @@ Add `Notes` as a seventh top-navigation label after `Grants` and before `CV`:
 
 `Home · Research · Publications · Projects · Grants · Notes · CV`
 
-In the preview, `Notes` opens an independent notes archive page rather than scrolling to the homepage section.
+On the homepage preview, `Notes` behaves like the other navigation labels and scrolls to the `BLOG & RESEARCH NOTES` section on the same page. It does not link directly to the independent notes archive.
+
+On independent note and archive pages, the top-navigation `Notes` label returns to the homepage notes section. The archive itself is reached from the single-note page through the `← Back to Blog & Research Notes` link.
 
 ## Homepage placement
 
@@ -27,8 +29,8 @@ The homepage displays no full article text and no introductory descriptions. It 
 Each item contains:
 
 1. A date on its own line in small muted text.
-2. A second row containing a left-aligned title and a right-aligned `Read note →` link.
-3. On narrow screens, the title and link stack naturally onto separate lines.
+2. A left-aligned linked title on the next line.
+3. No duplicate `Read note →` link.
 
 The branch preview uses three placeholder items to test the maximum homepage density. The eventual first public version removes the two unused placeholders and displays only the first substantive note. No public `Coming soon` items are permitted.
 
@@ -36,11 +38,13 @@ The branch preview uses three placeholder items to test the maximum homepage den
 
 Create an independent notes archive page. It uses the same header, navigation, typography, content width, section-label treatment, dividers, and footer as the homepage.
 
-The archive lists notes in reverse chronological order. No categories, tags, sidebars, comment system, reading-count widgets, or dedicated references section are included.
+The archive lists all notes in reverse chronological order. Each note is opened through its linked title. It contains no `Read note →` links, categories, tags, sidebars, comment system, reading-count widgets, or dedicated references section.
+
+The homepage provides no direct link to this archive. The archive is reached from a single-note page through the return link.
 
 ## Single-note page
 
-Create one placeholder single-note page to test navigation and reading width. It uses the same global visual language, a narrower reading column, a title, date, body placeholder text, and a return link to `BLOG & RESEARCH NOTES`.
+Create one placeholder single-note page to test navigation and reading width. It uses the same global visual language, a narrower reading column, a title, date, body placeholder text, and a `← Back to Blog & Research Notes` return link to the complete notes archive.
 
 The template does not contain a mandatory `References` section, although future note content may contain citations where appropriate.
 
@@ -57,10 +61,11 @@ This architecture leaves existing published files untouched and makes rollback e
 
 ## Success criteria
 
-- The published `gh-pages` branch remains byte-for-byte unchanged.
+- The published `gh-pages` branch remains unchanged by this feature branch.
 - The preview homepage shows three balanced note items.
-- `Notes` is the seventh navigation item.
-- Desktop items keep title left and `Read note →` right when space permits.
-- Mobile items stack without horizontal overflow.
+- `Notes` is the seventh navigation item and scrolls to the homepage notes section.
+- Homepage and archive items contain only a date and linked title.
+- The single-note return link opens the complete archive.
+- Mobile layouts avoid horizontal overflow.
 - Archive and single-note pages look native to the existing site.
 - All preview links work within the branch preview.
