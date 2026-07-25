@@ -14,6 +14,7 @@
   <script>
     (async function renderPreview() {
       try {
+        const requestedHash = window.location.hash;
         const response = await fetch('index.html', { cache: 'no-store' });
         if (!response.ok) {
           throw new Error(`Unable to load index.html (${response.status})`);
@@ -87,6 +88,13 @@
         document.documentElement.lang = parsed.documentElement.lang || 'en';
         document.head.innerHTML = parsed.head.innerHTML;
         document.body.innerHTML = parsed.body.innerHTML;
+
+        if (requestedHash) {
+          requestAnimationFrame(function scrollToRequestedSection() {
+            const target = document.querySelector(requestedHash);
+            if (target) target.scrollIntoView();
+          });
+        }
       } catch (error) {
         document.body.innerHTML = `
           <main style="max-width: 760px; margin: 80px auto; padding: 0 24px; font-family: Arial, sans-serif; line-height: 1.6;">
