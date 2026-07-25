@@ -8,7 +8,7 @@
         {% for note in published_notes limit: 3 %}
           <article class="note-preview">
             <time class="note-date" datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: '%-d %B %Y' }}</time>
-            <h3 class="note-preview-title"><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></h3>
+            <h3 class="note-preview-title"><a href="{{ note.url | relative_url }}">{{ note.title | escape }}{% if note.subtitle %}: {{ note.subtitle | escape }}{% endif %}</a></h3>
           </article>
         {% endfor %}
       </div>
