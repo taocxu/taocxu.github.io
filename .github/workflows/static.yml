@@ -31,6 +31,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Inject versioned Notes layout stylesheet
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          marker = '<link rel="stylesheet" href="/notes-layout-fix-20260726.css?v=2">'
+          for path in Path('.').rglob('*.html'):
+              text = path.read_text(encoding='utf-8')
+              if 'notes.css' not in text or marker in text:
+                  continue
+              text = text.replace('</head>', f'  {marker}\n</head>', 1)
+              path.write_text(text, encoding='utf-8')
+          PY
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
