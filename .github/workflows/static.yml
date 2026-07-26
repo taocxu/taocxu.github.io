@@ -31,18 +31,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Inject versioned Notes layout stylesheet
+      - name: Prepare Notes pages for deployment
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
 
           marker = '<link rel="stylesheet" href="/notes-layout-fix-20260726.css?v=2">'
+          old_heading = '<h2 class="section-label">BLOG &amp; RESEARCH NOTES</h2>'
+          new_heading = '<p class="section-label">BLOG &amp; RESEARCH NOTES</p>'
+
           for path in Path('.').rglob('*.html'):
               text = path.read_text(encoding='utf-8')
-              if 'notes.css' not in text or marker in text:
-                  continue
-              text = text.replace('</head>', f'  {marker}\n</head>', 1)
+
+              if path.parent.parent == Path('notes'):
+                  text = text.replace(old_heading, new_heading, 1)
+
+              if 'notes.css' in text and marker not in text:
+                  text = text.replace('</head>', f'  {marker}\n</head>', 1)
+
               path.write_text(text, encoding='utf-8')
           PY
       - name: Setup Pages
