@@ -1,0 +1,25 @@
+.notes-list-scroll {
+  height: 340px !important;
+  max-height: 340px !important;
+  overflow-y: scroll !important;
+  overscroll-behavior: contain;
+  padding-right: 12px;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #aeb4bb transparent;
+}
+
+.note-content p {
+  text-align: justify !important;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+@media (max-width: 680px) {
+  .notes-list-scroll {
+    height: 360px !important;
+    max-height: 360px !important;
+    padding-right: 8px;
+  }
+}
