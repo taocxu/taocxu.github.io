@@ -1,1 +1,19 @@
-placeholder
+ARCHIVED PRE-EDIT VERSION
+
+Article: When Ideas Come Back to Political Economy
+Archived: 26 July 2026
+Original source path: notes/when-ideas-enter-political-economy/index.html
+Full pre-edit page preserved in branch: rollback/pre-ideas-summary-edit-2026-07-26
+Pre-edit commit: 7a490f68761e4fc0f3cb934526e00f7aa815b816
+
+Previous section headings:
+
+1. From the Political Economy of Interests to the Political Economy of Ideas
+2. Ideational Complementarity and the Recursive Relationship Between Ideas and Interests
+3. Theoretical Contributions and Measured Reservations
+
+Paragraph removed from the public article:
+
+Three reservations remain. First, the production of memes is highly simplified. The specific roles of parties, bureaucracies, media, educational institutions and businesses are compressed into the probability that a political entrepreneur discovers a meme. Second, power is represented principally through resource expenditure and restrictions upon dissemination. The model gives less attention to deeper and more detailed modalities of power, including agenda-setting, authority, institutional embeddedness and the power to classify social reality. Third, identity is reduced to a single \(B/W\) marker. Actual class, ethnic, religious, regional and occupational identities intersect and are continually recomposed in more complex ways.
+
+This archive file is not linked from the website or Notes index.
