@@ -14,6 +14,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -52,13 +53,41 @@ jobs:
 
               path.write_text(text, encoding='utf-8')
           PY
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      
       - name: Upload artifact
+        id: upload
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: '.'
+
+      - name: Wait for artifact synchronisation
+        run: sleep 10
+
+      - name: Check artifact readiness
+        shell: bash
+        timeout-minutes: 3
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+        run: |
+          for attempt in $(seq 1 12); do
+            echo "Checking artifact: attempt ${attempt}/12"
+
+            if gh api \
+              "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts?name=github-pages" \
+              | jq -e --arg id "$ARTIFACT_ID" \
+              '.artifacts | length == 1 and (.[0].id | tostring) == $id and .[0].expired == false'
+            then
+              echo "Artifact is ready."
+              exit 0
+            fi
+
+            sleep 5
+          done
+
+          echo "::error::Artifact did not become available."
+          exit 1
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
